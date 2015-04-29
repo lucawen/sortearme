@@ -1,5 +1,6 @@
 
 <?php
+  date_default_timezone_set("America/Sao_Paulo");
   $cookie_name = 'nomes_lista';
 
   if (isset($_POST['lista-text'])) {

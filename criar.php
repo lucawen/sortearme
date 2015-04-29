@@ -20,8 +20,7 @@
     if (!isset($_COOKIE[$cookie_name])) {
       setcookie($cookie_name, $file_name, (time() + (2 * 3600)));
     } else {
-      $cookie_add = $_COOKIE[$cookie_name];
-      $cookie_add .= ';'.$file_name;
+      $cookie_add = $_COOKIE[$cookie_name].';'.$file_name;
       setcookie($cookie_name, $cookie_add, (time() + (2 * 3600)));
     }
     $msgOk = true;
@@ -72,11 +71,11 @@
       if (isset($_POST['lista-text'])){
         if ($msgOk == true){
           ?>
-          <script> Materialize.toast('<span>Lista criada com</span><a class=&quot;btn-flat green-text&quot; href=&quot;#!&quot;>SUCESSO<a>', 5000); </script>
+          <script> Materialize.toast('<span>Lista criada com</span><a class=&quot;btn-flat green-text&quot; href=&quot;#!&quot;>SUCESSO<a>', 5000) </script>
         <?php
         } else {
           ?>
-          <script> Materialize.toast('<span>Houve um</span><a class=&quot;btn-flat red-text&quot; href=&quot;#!&quot;>PROBLEMA<a>', 5000); </script>
+          <script> Materialize.toast('<span>Houve um</span><a class=&quot;btn-flat red-text&quot; href=&quot;#!&quot;>PROBLEMA<a>', 5000) </script>
         <?php
         }
       }

@@ -6,10 +6,6 @@
   $cookies_array = explode("%3", $cookie_set);
   $n_cookies = count($cookies_array);
 
-  pimbalho_29-04-2015_20-30-22.txt
-  Bnova+onda_29-04-2015_20-30-40.txt
-  Bpermelhado-pretos_29-04-2015_20-30-56.txt
-
   $msgOk = true;
 
 

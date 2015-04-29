@@ -1,3 +1,12 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main {
+    flex: 1 0 auto;
+}
+
 .logoStyle {
     padding-left:30px;
     color:#FF694E;
@@ -6,8 +15,25 @@
 }
 .logoStyleExt {
     font-size: 20px;
-    @extend .blue-text, .text-lighten-4;
 }
-.nav-wrapper {
-    #01579b light-blue darken-4
+
+.divBTon{
+  padding-top: 20px;
+  padding-bottom:20px;
 }
+
+.divBBon{
+  padding-top: 20px;
+  padding-bottom:50px;
+}
+.parallax-container2 {
+  position: relative;
+  overflow: hidden;
+  height: 550px;
+}
+
+.divEquipe{
+  padding-top: 20px;
+}
+
+.navTop{ padding-left:300px;}

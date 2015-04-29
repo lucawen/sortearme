@@ -21,6 +21,10 @@ main {
   padding-top: 20px;
   padding-bottom:20px;
 }
+.divBTon2{
+  padding-top: 100px;
+  padding-bottom:80px;
+}
 
 .divBBon{
   padding-top: 20px;
@@ -52,3 +56,5 @@ main {
 }
 
 .navTop{ padding-left:300px;}
+
+.buttonSubDiv{padding-top: 60px;}

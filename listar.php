@@ -54,11 +54,11 @@
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
             <ul id="slide-out" class="side-nav">
               <li><a href="contato.php">Contato</a></li>
-              <li class="active"><a href="#">Nova Lista</a></li>
+              <li><a href="criar.php">Nova Lista</a></li>
               <?php
               if (isset($_COOKIE[$cookie_name])) {
                 ?>
-                <li><a href="listar.php">Minhas Listas</a></li>
+                <li><a href="#">Minhas Listas</a></li>
                 <?php
               }
               ?>
@@ -68,11 +68,11 @@
               <?php
               if (isset($_COOKIE[$cookie_name])) {
                 ?>
-                <li class="right"><a href="listar.php">Minhas Listas</a></li>
+                <li class="right active"><a href="#">Minhas Listas</a></li>
                 <?php
               }
               ?>
-              <li class="right active"><a href="#">Nova Lista</a></li>
+              <li class="right"><a href="criar.php">Nova Lista</a></li>
             </ul>
           </div>
         </nav>
@@ -144,11 +144,11 @@
             <ul>
               <li><a class="grey-text text-lighten-3" href="index.php">Início</a></li>
               <li><a class="grey-text text-lighten-3" href="contato.php">Contato</a></li>
-              <li><a class="grey-text text-lighten-3" href="#">Nova Lista</a></li>
+              <li><a class="grey-text text-lighten-3" href="criar.php">Nova Lista</a></li>
               <?php
               if (isset($_COOKIE[$cookie_name])) {
                 ?>
-                <li><a class="grey-text text-lighten-3" href="listar.php">Minhas Listas</a></li>
+                <li><a class="grey-text text-lighten-3" href="#">Minhas Listas</a></li>
                 <?php
               }
               ?>

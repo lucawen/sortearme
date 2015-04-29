@@ -25,11 +25,11 @@ $cookie_name = 'nomes_lista';
       <div class="navbar-fixed">
         <nav>
           <div class="nav-wrapper #0d47a1 blue darken-4">
-            <a href="index.html" class="brand-logo"><span class="logoStyle text-accent-3">SORTEAR</span><span class="logoStyleExt">.ME</span></a>
+            <a href="index.php" class="brand-logo"><span class="logoStyle text-accent-3">SORTEAR</span><span class="logoStyleExt">.ME</span></a>
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
             <ul id="slide-out" class="side-nav">
               <li><a href="contato.php">Contato</a></li>
-              <li class="active"><a href="#">Nova Lista</a></li>
+              <li><a href="criar.php">Nova Lista</a></li>
               <?php
               if (isset($_COOKIE[$cookie_name])) {
                 ?>
@@ -47,7 +47,7 @@ $cookie_name = 'nomes_lista';
                 <?php
               }
               ?>
-              <li class="right active"><a href="#">Nova Lista</a></li>
+              <li class="right"><a href="criar.php">Nova Lista</a></li>
             </ul>
           </div>
         </nav>
@@ -58,7 +58,7 @@ $cookie_name = 'nomes_lista';
       <div class="parallax-container">
         <div class="white-text center-align">
           <h4>Uma forma inteligente de randomizar</h4>
-          <a class="waves-effect waves-light btn-large"><i class="mdi-av-playlist-add right"></i>CRIAR LISTA</a>
+          <a class="waves-effect waves-light btn-large" href="criar.php"><i class="mdi-av-playlist-add right"></i>CRIAR LISTA</a>
         </div>
         <div class="parallax">
           <img src="img/bg1.jpg">
@@ -202,10 +202,16 @@ $cookie_name = 'nomes_lista';
           <div class="col l4 offset-l2 s12">
             <h5 class="white-text">Links</h5>
             <ul>
-              <li><a class="grey-text text-lighten-3" href="index.html">Início</a></li>
+              <li><a class="grey-text text-lighten-3" href="index.php">Início</a></li>
               <li><a class="grey-text text-lighten-3" href="contato.php">Contato</a></li>
               <li><a class="grey-text text-lighten-3" href="criar.php">Nova Lista</a></li>
-              <li><a class="grey-text text-lighten-3" href="listar.php">Minhas Listas</a></li>
+              <?php
+              if (isset($_COOKIE[$cookie_name])) {
+                ?>
+                <li><a class="grey-text text-lighten-3" href="listar.php">Minhas Listas</a></li>
+                <?php
+              }
+              ?>
             </ul>
           </div>
         </div>

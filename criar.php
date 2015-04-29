@@ -9,7 +9,7 @@
     $file_name .= '-'.date('H:i:s');
     $file_name .= '.txt';
 
-    $file_Create = fopen($file_name, 'w');
+    $file_Create = fopen('lists/'.$file_name, 'w');
 
     fwrite($file_Create, $lista_texto);
     fclose($file_Create);

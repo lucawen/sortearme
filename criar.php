@@ -8,8 +8,8 @@
     $lista_texto = $_POST['lista-text'];
 
     $file_name = $lista_nome;
-    $file_name .= '-'.date('d-m-Y');
-    $file_name .= '-'.date('H:i:s');
+    $file_name .= '_'.date('d-m-Y');
+    $file_name .= '_'.date('H:i:s');
     $file_name .= '.txt';
 
     $file_Create = fopen('lists/'.$file_name, 'w');
@@ -24,7 +24,9 @@
       $cookie_add += ';'.$file_name;
       setcookie($cookie_name, $cookie_add, (time() + (2 * 3600)));
     }
+    <a class="waves-effect waves-light btn" onclick="Materialize.toast('<span>Lista criada com</span><a class=&quot;btn-flat green-text&quot; href=&quot;#!&quot;>SUCESSO<a>', 5000)">Toast!</a>
   }
+
 ?>
 <!DOCTYPE html>
 <html>

@@ -90,6 +90,7 @@
                     <tr>
                         <th data-field="name">Nome</th>
                         <th data-field="creation-date">Data de criação</th>
+                        <th data-field="options">Hora de criação</th>
                         <th data-field="options">Opções</th>
                     </tr>
                   </thead>
@@ -102,6 +103,7 @@
                           <td>$cookies_array2array[0]</td>
                           <td>$cookies_array2array[1]</td>
                           <td>$cookies_array2array[2]</td>
+                          <td>Opções</td>
                         </tr>
                         ";
                     ?>

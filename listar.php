@@ -2,28 +2,16 @@
   date_default_timezone_set("America/Sao_Paulo");
   $cookie_name = 'nomes_lista';
 
-  if (isset($_POST['lista-text'])) {
-    $lista_nome = $_POST['lista-nome'];
-    $lista_texto = $_POST['lista-text'];
+  $cookie_set = $_COOKIE[$cookie_name];
+  $cookies_array = explode("%3", $cookie_set);
+  $n_cookies = count($cookies_array);
 
-    $file_name = $lista_nome;
-    $file_name .= '_'.date('d-m-Y');
-    $file_name .= '_'.date('H-i-s');
-    $file_name .= '.txt';
+  pimbalho_29-04-2015_20-30-22.txt
+  Bnova+onda_29-04-2015_20-30-40.txt
+  Bpermelhado-pretos_29-04-2015_20-30-56.txt
 
-    $file_Create = fopen('lists/'.$file_name, 'w');
+  $msgOk = true;
 
-    fwrite($file_Create, $lista_texto);
-    fclose($file_Create);
-
-    if (!isset($_COOKIE[$cookie_name])) {
-      setcookie($cookie_name, $file_name, (time() + (2 * 3600)));
-    } else {
-      $cookie_add = $_COOKIE[$cookie_name].';'.$file_name;
-      setcookie($cookie_name, $cookie_add, (time() + (2 * 3600)));
-    }
-    $msgOk = true;
-  }
 
 ?>
 <!DOCTYPE html>
@@ -93,40 +81,33 @@
     ?>
     <main>
         <div class="container">
-          <h5 class="center-align divBTon2">Ciar nova lista</h5>
+          <h5 class="center-align divBTon2">Minhas Listas</h5>
           <div class="center-align divBBon">
             <div class="row">
-              <form class="col s12" action="#" method="post">
-                <div class="row">
-                  <div class="input-field col l4 offset-l1" >
-                    <input placeholder="Lista-nomes" id="list_name" type="text" class="validate" name="lista-nome">
-                    <label for="list_name">Nome da lista</label>
-                  </div>
-                  <div class="input-field col l6" >
-                    <i class="mdi-editor-mode-edit prefix "></i>
-                    <textarea id="icon_prefix2" class="materialize-textarea" name="lista-text"></textarea>
-                    <label for="icon_prefix2">Conteúdo da lista</label>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col l4 offset-l1">
-                      <h6>Opções</h6>
-                      <p>
-                        <input type="checkbox" class="filled-in" id="filled-in-box" disabled="disabled" name="lista-arquivo"/>
-                        <label for="filled-in-box">Lista por arquivo</label>
-                      </p>
-                      <p>
-                        <input type="checkbox" class="filled-in" id="filled-in-box" disabled="disabled" name="lista-start-sorteio"/>
-                        <label for="filled-in-box">Começar sorteio</label>
-                      </p>
-                      <div class="buttonSubDiv">
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Criar
-                          <i class="mdi-content-send right"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
+              <div class="col l6 offset-l3">
+                <table class="hoverable responsive-table">
+                  <thead>
+                    <tr>
+                        <th data-field="name">Nome</th>
+                        <th data-field="creation-date">Data de criação</th>
+                        <th data-field="options">Opções</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php
+                      for($i=0 ; $i < $n_cookies ; $i++ ){
+                        $cookies_array2array = explode("_", $cookies_array[$i]);
+                        echo "
+                        <tr>
+                          <td>$cookies_array2array[0]</td>
+                          <td>$cookies_array2array[1]</td>
+                          <td>$cookies_array2array[2]</td>
+                        </tr>
+                        ";
+                    ?>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>

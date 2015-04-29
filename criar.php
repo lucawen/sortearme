@@ -93,7 +93,7 @@
     ?>
     <main>
         <div class="container">
-          <h5 class="center-align divBTon2">Ciar nova lista</h5>
+          <h5 class="center-align divBTon2">Criar nova lista</h5>
           <div class="center-align divBBon">
             <div class="row">
               <form class="col s12" action="#" method="post">

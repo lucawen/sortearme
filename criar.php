@@ -24,7 +24,7 @@
       $cookie_add += ';'.$file_name;
       setcookie($cookie_name, $cookie_add, (time() + (2 * 3600)));
     }
-    <a class="waves-effect waves-light btn" onclick="Materialize.toast('<span>Lista criada com</span><a class=&quot;btn-flat green-text&quot; href=&quot;#!&quot;>SUCESSO<a>', 5000)">Toast!</a>
+    $msgOk = true;
   }
 
 ?>
@@ -68,6 +68,19 @@
         </nav>
       </div>
     </header>
+    <?php
+      if (isset($_POST['lista-text'])){
+        if ($msgOk == true){
+          ?>
+          <a class="waves-effect waves-light btn" onclick="Materialize.toast('<span>Lista criada com</span><a class=&quot;btn-flat green-text&quot; href=&quot;#!&quot;>SUCESSO<a>', 5000)">!</a>"
+        <?php
+        } else {
+          ?>
+          <a class="waves-effect waves-light btn" onclick="Materialize.toast('<span>Houve um</span><a class=&quot;btn-flat red-text&quot; href=&quot;#!&quot;>PROBLEMA<a>', 5000)"> ao criar a lista.</a>"
+        <?php
+        }
+      }
+    ?>
     <main>
         <div class="container">
           <h5 class="center-align divBTon2">Ciar nova lista</h5>

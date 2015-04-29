@@ -2,7 +2,7 @@
 <?php
   $cookie_name = 'nomes_lista';
 
-  if (isset($_POST['lista-text']) {
+  if (isset($_POST['lista-text'])) {
     $lista_nome = $_POST['lista-nome'];
     $lista_texto = $_POST['lista-text'];
 
@@ -18,7 +18,7 @@
     fwrite($file_Create, $lista_texto);
     fclose($file_Create);
 
-    if (!isset($_COOKIE[$cookie_name]) {
+    if (!isset($_COOKIE[$cookie_name])) {
       setcookie($cookie_name, $file_name, (time() + (2 * 3600)));
     } else {
       $cookie_add += ';'.$file_name;

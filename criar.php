@@ -72,7 +72,7 @@
       if (isset($_POST['lista-text'])){
         if ($msgOk == true){
           ?>
-          <script> Materialize.toast('<span>Lista criada com</span><a class=&quot;btn-flat green-text&quot; href=&quot;#!&quot;>SUCESSO<a>', 5000); </script
+          <script> Materialize.toast('<span>Lista criada com</span><a class=&quot;btn-flat green-text&quot; href=&quot;#!&quot;>SUCESSO<a>', 5000); </script>
         <?php
         } else {
           ?>

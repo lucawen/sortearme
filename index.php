@@ -1,3 +1,6 @@
+<?php
+$cookie_name = 'nomes_lista';
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -22,20 +25,31 @@
       <div class="navbar-fixed">
         <nav>
           <div class="nav-wrapper #0d47a1 blue darken-4">
-            <a href="#!" class="brand-logo"><span class="logoStyle text-accent-3">SORTEAR</span><span class="logoStyleExt">.ME</span></a>
+            <a href="index.html" class="brand-logo"><span class="logoStyle text-accent-3">SORTEAR</span><span class="logoStyleExt">.ME</span></a>
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
             <ul id="slide-out" class="side-nav">
               <li><a href="contato.php">Contato</a></li>
-              <li><a href="criar.php">Nova Lista</a></li>
-              <li><a href="listar.php">Minhas Listas</a></li>
+              <li class="active"><a href="#">Nova Lista</a></li>
+              <?php
+              if (isset($_COOKIE[$cookie_name])) {
+                ?>
+                <li><a href="listar.php">Minhas Listas</a></li>
+                <?php
+              }
+              ?>
             </ul>
             <ul id="nav-mobile" class="hide-on-med-and-down">
-              <div class="navTop"><li class="left"><a href="#">Contato</a></li></div>
-              <li class="right"><a href="listar.php">Minhas Listas</a></li>
-              <li class="right"><a href="criar.php">Nova Lista</a></li>
+              <div class="navTop"><li class="left"><a href="contato.php">Contato</a></li></div>
+              <?php
+              if (isset($_COOKIE[$cookie_name])) {
+                ?>
+                <li class="right"><a href="listar.php">Minhas Listas</a></li>
+                <?php
+              }
+              ?>
+              <li class="right active"><a href="#">Nova Lista</a></li>
             </ul>
           </div>
-
         </nav>
       </div>
     </header>

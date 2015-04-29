@@ -1,4 +1,3 @@
-
 <?php
   date_default_timezone_set("America/Sao_Paulo");
   $cookie_name = 'nomes_lista';
@@ -56,11 +55,23 @@
             <ul id="slide-out" class="side-nav">
               <li><a href="contato.php">Contato</a></li>
               <li class="active"><a href="#">Nova Lista</a></li>
-              <li><a href="listar.php">Minhas Listas</a></li>
+              <?php
+              if (isset($_COOKIE[$cookie_name])) {
+                ?>
+                <li><a href="listar.php">Minhas Listas</a></li>
+                <?php
+              }
+              ?>
             </ul>
             <ul id="nav-mobile" class="hide-on-med-and-down">
               <div class="navTop"><li class="left"><a href="contato.php">Contato</a></li></div>
-              <li class="right"><a href="listar.php">Minhas Listas</a></li>
+              <?php
+              if (isset($_COOKIE[$cookie_name])) {
+                ?>
+                <li class="right"><a href="listar.php">Minhas Listas</a></li>
+                <?php
+              }
+              ?>
               <li class="right active"><a href="#">Nova Lista</a></li>
             </ul>
           </div>

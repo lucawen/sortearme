@@ -6,8 +6,7 @@
     $lista_nome = $_POST['lista-nome'];
     $lista_texto = $_POST['lista-text'];
 
-    $cookie_set = $_COOKIE[$cookie_name];
-    $cookie_add = $cookie_set
+    $cookie_add = $_COOKIE[$cookie_name];
 
     $file_name = $lista_nome;
     $file_name .= '-'.date('d-m-Y');
@@ -15,15 +14,15 @@
     $file_name .= '.txt';
 
     $file_Create = fopen('lists/'.$file_name, 'w');
-    echo ="asas"
+
     fwrite($file_Create, $lista_texto);
     fclose($file_Create);
 
-    if (!$cookie_set) {
+    if (!$_COOKIE[$cookie_name]) {
       setcookie($cookie_name, $file_name, (time() + (2 * 3600)));
     } else {
       $cookie_add += ';'.$file_name;
-      setcookie($cookie_set, $cookie_add, (time() + (2 * 3600)));
+      setcookie($cookie_name, $cookie_add, (time() + (2 * 3600)));
     }
   }
 ?>

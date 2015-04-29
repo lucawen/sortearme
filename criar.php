@@ -9,7 +9,7 @@
 
     $file_name = $lista_nome;
     $file_name .= '_'.date('d-m-Y');
-    $file_name .= '_'.date('H:i:s');
+    $file_name .= '_'.date('H-i-s');
     $file_name .= '.txt';
 
     $file_Create = fopen('lists/'.$file_name, 'w');
@@ -21,7 +21,7 @@
       setcookie($cookie_name, $file_name, (time() + (2 * 3600)));
     } else {
       $cookie_add = $_COOKIE[$cookie_name];
-      $cookie_add += ';'.$file_name;
+      $cookie_add .= ';'.$file_name;
       setcookie($cookie_name, $cookie_add, (time() + (2 * 3600)));
     }
     $msgOk = true;

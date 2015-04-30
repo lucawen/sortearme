@@ -2,6 +2,10 @@
   date_default_timezone_set("America/Sao_Paulo");
   $cookie_name = "nomes_lista";
 
+  if (!isset($_COOKIE[$cookie_name])){
+    header("location:$redirect");
+  }
+
   $cookie_set = $_COOKIE[$cookie_name];
   $cookies_array = explode(";", $cookie_set);
   $n_cookies = count($cookies_array);

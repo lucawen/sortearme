@@ -29,7 +29,7 @@
 
   if (isset($_GET['msg'])){
     if($_GET['msg'] == 'sucess'){
-      $sucessMsg = "";
+      $sucessMsg = "CS";
     }
   }
 ?>
@@ -93,21 +93,20 @@
           <h5 class="center-align divBTon2">Criar nova lista</h5>
           <div class="center-align divBBon">
             <div class="row">
-              <?php
-              if ($sucessMsg){
-                ?>
-                <div class="row">
-                  <div class="col s12 m5 center-align ">
-                    <div class="card-panel teal">
-                      <span class="white-text">Lista criada com sucesso!</span>
+              <form class="col s12" action="#" method="post">
+                <?php
+                if ($sucessMsg){
+                  ?>
+                  <div class="row">
+                    <div class="col s12 m5 ">
+                      <div class="card-panel teal center-align">
+                        <span class="white-text">Lista criada com sucesso!</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <?php
-                }
-              ?>
-              <form class="col s12" action="#" method="post">
-
+                  <?php
+                  }
+                ?>
                 <div class="row">
                   <div class="input-field col l4 offset-l1" >
                     <input placeholder="Lista-nomes" id="list_name" type="text" class="validate" name="lista-nome" required />

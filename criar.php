@@ -23,7 +23,7 @@
       setcookie($cookie_name, $cookie_add, (time() + (2 * 3600)));
     }
     echo '<script type="text/javascript">'
-       , 'Materialize.toast('Lista criada com Sucesso!', 5000);'
+       , 'msgShow();'
        , '</script>'
     ;
   }
@@ -175,7 +175,10 @@
       $('.parallax').parallax();
     });
 
-    $(".button-collapse").sideNav();
+      $(".button-collapse").sideNav();
+      function msgShow(){
+        Materialize.toast('<span>Lista </span><a class=&quot;btn-flat yellow-text&quot; href=&quot;#!&quot;>ADICIONADA<a>', 5000);
+      }
     </script>
   </body>
 </html>

@@ -96,10 +96,15 @@
                         $cookies_array2array = explode("_", $cookies_array[$i]);
                         echo "
                         <tr>
-                          <td>$cookies_array2array[0]</td>
-                          <td>$cookies_array2array[1]</td>
-                          <td>$cookies_array2array[2]</td>
-                          <td></td>
+                          <td>".$cookies_array2array[0]."</td>
+                          <td>".$cookies_array2array[1]."</td>
+                          <td>".$cookies_array2array[2]."</td>
+                          <td>
+                            <i class="mdi-image-flash-on"></i>
+                            <i class="mdi-action-get-app"></i>
+                            <i class="mdi-editor-mode-editn"></i>
+                            <i class="mdi-action-highlight-remove"></i>
+                          </td>
                         </tr>
                         ";
                         }

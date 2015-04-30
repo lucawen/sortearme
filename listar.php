@@ -118,16 +118,6 @@
               </div>
             </div>
             <?php
-          } else {
-            ?>
-            <div class="row">
-              <div class="col s12 m5 l4 offset-l4">
-                <div class="card-panel teal center-align">
-                  <span class="white-text"><?php echo $failMsg; ?></span>
-                </div>
-              </div>
-            </div>
-            <?php
           }
           ?>
           <h5 class="center-align divBTon2">Minhas Listas</h5>

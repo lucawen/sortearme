@@ -137,17 +137,15 @@
           if (isset($numSelect)){
             ?>
             <div class="row">
-              <div class="col s12 m5 l4 offset-l4">
+              <div class="col s12 m5 l8 offset-l2">
                 <div class="card-panel teal center-align">
                   <form action="#" method="get">
-                    <div class="col s12 m5 l4 offset-l4">
                       <input  id="num_select" name="num_select" type="text" class="validate" required/>
                       <label for="num_select">Quantidade para sortear números</label>
                       <input type="hidden" name="num_fileTrans" value="<?php echo $numSelect;?>" />
                       <button class="btn waves-effect waves-light" type="submit" name="action">Sortear
                        <i class="mdi-content-send right"></i>
                      </button>
-                    </div>
                   </form>
                 </div>
               </div>

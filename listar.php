@@ -34,8 +34,9 @@
           unlink ('lists/'.$cookies_array[$k]);
         }
       }
-      setcookie($cookie_name, $cookie_massive);
       echo $cookie_massive;
+      setcookie($cookie_name, $cookie_massive);
+    //  header("location: listar.php");
     } else {
       echo "Comando inexistente";
     }

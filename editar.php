@@ -6,7 +6,7 @@
   }
 
 
-  if (isset($_POST['file'])){
+  if (isset($_GET['file'])){
     $file_edit =  $_POST['file'];
     $fileEditing = file_get_contents('lists/'.$file_edit);
 

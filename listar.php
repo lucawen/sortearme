@@ -6,7 +6,7 @@
   $cookies_array = explode("%3", $cookie_set);
   $n_cookies = count($cookies_array);
 
-  $msgOk = true;
+  //$msgOk = true;
 
 
 ?>
@@ -102,6 +102,7 @@
                           <td>Opções</td>
                         </tr>
                         ";
+                        }
                     ?>
                   </tbody>
                 </table>

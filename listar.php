@@ -23,7 +23,7 @@
     } else if ($action_method == 'remove') {
       $rCount = true;
       for($k=0 ; $k < $n_cookies ; $k++ ){
-        if ($cookies_array[$k] !== $list_file)
+        if ($cookies_array[$k] !== $list_file){
           if ($rCount == true) {
             $cookie_massive = $cookies_array[$k];
             $rCount = false;

@@ -10,7 +10,7 @@
   $cookies_array = explode(";", $cookie_set);
   $n_cookies = count($cookies_array);
 
-  if (isset($_GET['num_fileTrans'])){
+  if (isset($_GET['num_select'])){
     $fileNumSend =  $_GET['num_fileTrans'];
     $numSend = $_GET['num_select'];
     //header('location: listar.php?action=sortear&num_rep='.$numSend.'&file='.$fileNumSend);

@@ -45,8 +45,9 @@
       js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.3&appId=1395621250699834";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-    
+
     $(".button-collapse").sideNav();
+
     function msgShow(){
       Materialize.toast('<span>Lista </span><a class=&quot;btn-flat yellow-text&quot; href=&quot;#!&quot;>ADICIONADA<a>', 5000);
     }
@@ -87,11 +88,12 @@
     <?php
       if (isset($_POST['lista-text'])){
         if ($msgOk == true){
-          echo '<script type="text/javascript">'
+          echo '<script>'
              , 'msgShow();'
              , '</script>'
           ;
         }
+      }
     ?>
     <main>
         <div class="container">

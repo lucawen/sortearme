@@ -98,7 +98,7 @@
                         <tr>
                           <td>'.$cookies_array2array[0].'</td>
                           <td>'.$cookies_array2array[1].'</td>
-                          <td>'.$cookies_array2array[2].'</td>
+                          <td>'.Echo explode('.', $cookies_array2array[2])[0].'</td>
                             <a href="sorteio.php"><i class="small mdi-image-flash-on"></i></a>
                             <a href="baixar.php" class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Baixar lista"><i class="small mdi-action-get-app" ></i></a>
                             <a href="editar.php" class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Editar lista"><i class="small mdi-editor-mode-edit"></i></a>

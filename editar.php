@@ -1,9 +1,15 @@
 <?php
   date_default_timezone_set("America/Sao_Paulo");
 
+  $cookie_name = "nomes_lista";
   if (!isset($_COOKIE[$cookie_name])){
     header("location: index.php");
   }
+
+  if (!isset($_GET['file']) || !isset($_POST['lista-text'])){
+    header("location: index.php");
+  }
+
   if (isset($_GET['file'])){
     $file_edit =  $_GET['file'];
     $fileEditing = file_get_contents('lists/'.$file_edit);

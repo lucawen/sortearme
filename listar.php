@@ -80,7 +80,7 @@
           <h5 class="center-align divBTon2">Minhas Listas</h5>
           <div class="center-align divBBon">
             <div class="row">
-              <div class="col l8 offset-l2">
+              <div class="col l10 offset-l1">
                 <table class="hoverable responsive-table centered">
                   <thead>
                     <tr>

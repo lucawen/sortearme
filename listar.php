@@ -42,9 +42,6 @@
       }
     } else if ($action_method == 'sortearNum') {
       $numSelect = $_GET['file'];
-    } else if ($action_method == 'edit') {
-
-      header("location: listar.php?msg=sucessEdit");
     } else if ($action_method == 'remove') {
       $rCount = true;
       for($k=0 ; $k < $n_cookies ; $k++ ){
@@ -209,7 +206,7 @@
                           <td>
                             <a class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Criar sorteio" href="?action=sortear&file='.$cookies_array[$i].'"" ><i class="small mdi-image-flash-on"></i></a>
                             <a class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Baixar lista" href="download.php?file='.$cookies_array[$i].'""><i class="small mdi-action-get-app" ></i></a>
-                            <a class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Editar lista" href="?action=edit&file='.$cookies_array[$i].'""><i class="small mdi-editor-mode-edit"></i></a>
+                            <a class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Editar lista" href="edit.php?file='.$cookies_array[$i].'""><i class="small mdi-editor-mode-edit"></i></a>
                             <a class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Deletar lista" href="?action=remove&file='.$cookies_array[$i].'"><i class="small mdi-action-highlight-remove"></i></a>
                           </td>
                         </tr>

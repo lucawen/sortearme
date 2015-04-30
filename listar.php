@@ -10,9 +10,9 @@
   $cookies_array = explode(";", $cookie_set);
   $n_cookies = count($cookies_array);
 
-  if (isset($_GET['num_select'])){
-    $fileNumSend =  $_GET['num_fileTrans'];
-    $numSend = $_GET['num_select'];
+  if (isset($_POST['num_select'])){
+    $fileNumSend =  $_POST['num_fileTrans'];
+    $numSend = $_POST['num_select'];
     //header('location: listar.php?action=sortear&num_rep='.$numSend.'&file='.$fileNumSend);
   }
   if (isset($_GET['action'])){
@@ -138,7 +138,7 @@
             ?>
                 <div class="row">
                   <div class="input-field col l6">
-                    <form class="col l6" action="#" method="get">
+                    <form class="col l6" action="#" method="post">
                       <input  id="num_select" name="num_select" type="text" class="validate" required/>
                       <label for="num_select">Quantidade para sortear números</label>
                       <input type="hidden" name="num_fileTrans" value="<?php echo $numSelect;?>" />

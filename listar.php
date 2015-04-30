@@ -100,10 +100,8 @@
                           <td>$cookies_array2array[1]</td>
                           <td>$cookies_array2array[2]</td>
                           <td>
-                            <i class="small mdi-image-flash-on"></i>
-                            <i class="small mdi-action-get-app"></i>
-                            <i class="small mdi-editor-mode-editn"></i>
-                            <i class="small mdi-action-highlight-remove"></i>
+                            <i class="mdi-image-flash-on"></i>
+                            
                           </td>
                         </tr>
                         ";

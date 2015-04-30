@@ -33,6 +33,7 @@
         }
       }
       setcookie($cookie_name, $cookie_massive);
+      unlink ($list_file);
     } else {
       echo "Comando inexistente";
     }

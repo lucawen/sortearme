@@ -1,6 +1,6 @@
 <?php
   date_default_timezone_set("America/Sao_Paulo");
-  $cookie_name = 'nomes_lista';
+  $cookie_name = "nomes_lista";
 
   $cookie_set = $_COOKIE[$cookie_name];
   $cookies_array = explode(";", $cookie_set);
@@ -99,10 +99,10 @@
                           <td>'.$cookies_array2array[0].'</td>
                           <td>'.$cookies_array2array[1].'</td>
                           <td>'.$cookies_array2array[2].'</td>
-                            <a href="sorteio.php"><i class="small mdi-image-flash-on tooltipped" data-position="bottom" data-delay="50" data-tooltip="Criar sorteio"></i></a>
-                            <a href="baixar.php"><i class="small mdi-action-get-app tooltipped" data-position="bottom" data-delay="50" data-tooltip="Baixar lista"></i></a>
-                            <a href="editar.php"><i class="small mdi-editor-mode-edit tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar lista"></i></a>
-                            <a href="remover.php"><i class="small mdi-action-highlight-remove tooltipped" data-position="bottom" data-delay="50" data-tooltip="Remover lista"></i></a>
+                            <a href="sorteio.php" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Criar sorteio"><i class="small mdi-image-flash-on"></i></a>
+                            <a href="baixar.php" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Baixar lista"><i class="small mdi-action-get-app" ></i></a>
+                            <a href="editar.php" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar lista"><i class="small mdi-editor-mode-edit"></i></a>
+                            <a href="remover.php" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Remover lista"><i class="small mdi-action-highlight-remove"></i></a>
                           </td>
                         </tr>
                         ';

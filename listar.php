@@ -138,12 +138,14 @@
             ?>
                 <div class="row">
                   <div class="input-field col l6">
-                    <input  id="num_select" name="num_select" type="text" class="validate" required/>
-                    <label for="num_select">Quantidade para sortear números</label>
-                    <input type="hidden" name="num_fileTrans" value="<?php echo $numSelect;?>" />
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Sortear
-                     <i class="mdi-content-send right"></i>
-                   </button>
+                    <form class="col l6" action="#" method="get">
+                      <input  id="num_select" name="num_select" type="text" class="validate" required/>
+                      <label for="num_select">Quantidade para sortear números</label>
+                      <input type="hidden" name="num_fileTrans" value="<?php echo $numSelect;?>" />
+                      <button class="btn waves-effect waves-light" type="submit" name="action">Sortear
+                       <i class="mdi-content-send right"></i>
+                     </button>
+                   </form>
                   </div>
                 </div>
             <?php

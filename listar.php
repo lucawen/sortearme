@@ -94,12 +94,12 @@
                     <?php
                       for($i=0 ; $i < $n_cookies ; $i++ ){
                         $cookies_array2array = explode("_", $cookies_array[$i]);
-                        $time_create = explode(".", $cookies_array2array[2], [0]);
+                        $time_create = explode(".", $cookies_array2array[2]);
                         echo '
                         <tr>
                           <td>'.$cookies_array2array[0].'</td>
                           <td>'.$cookies_array2array[1].'</td>
-                          <td>'.$time_create.'</td>
+                          <td>'.$time_create[0].'</td>
                             <a ><i class="small mdi-image-flash-on"></i></a>
                             <a ><i class="small mdi-action-get-app" ></i></a>
                             <a ><i class="small mdi-editor-mode-edit"></i></a>

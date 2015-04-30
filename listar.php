@@ -13,7 +13,7 @@
   if (isset($_GET['num_fileTrans'])){
     $fileNumSend =  $_GET['num_fileTrans'];
     $numSend = $_GET['num_select'];
-    header('location: listar.php?action=sortear&file='.$fileNumSend.'&num_rep='.$numSend);
+    header('location: listar.php?action=sortear&num_rep='.$numSend.'&file='.$fileNumSend);
   }
   if (isset($_GET['action'])){
     $action_method = $_GET['action'];
@@ -26,10 +26,10 @@
       if (isset($_GET['num_rep'])){
         $n_lists = $_GET['num_rep'];
         $sCount = true;
-        for($f=0 ; $f < $n_lists ; $k++ ){
+        for($f=0 ; $f < $n_lists ; $f++ ){
           sort($lists_array);
           if ($sCount == true) {
-            $sort_result .= $lists_array[$f];
+            $sort_result = $lists_array[$f];
             $sCount = false;
           } else {
             $sort_result .= ';'.$lists_array[$f];
@@ -136,8 +136,6 @@
           <?php
           if (isset($numSelect)){
             ?>
-            <div class="row">
-              <form class="col l8 offset-l2">
                 <div class="row">
                   <div class="input-field col l6">
                     <input  id="num_select" name="num_select" type="text" class="validate" required/>
@@ -148,8 +146,6 @@
                    </button>
                   </div>
                 </div>
-              </div>
-            </div>
             <?php
           }
           ?>

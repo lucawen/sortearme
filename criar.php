@@ -24,9 +24,16 @@
       $cookie_add = $_COOKIE[$cookie_name].';'.$file_name;
       setcookie($cookie_name, $cookie_add, (time() + (2 * 3600)));
     }
-    header("location: criar.php");
+    header("location: criar.php?msg=sucess");
   }
 
+  if (isset($_GET['msg'])){
+    if($_GET['msg'] == 'sucess'){
+      $sucessMsg = "Lista adicionada.";
+    } else {
+      $failMsg = "Ocorrou algum problema.";
+    }
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -89,6 +96,22 @@
           <div class="center-align divBBon">
             <div class="row">
               <form class="col s12" action="#" method="post">
+                <?php
+                if ($sucessMsg){
+                  ?>
+                  <script>
+                    Materialize.toast('<span>Lista </span><a class=&quot;btn-flat green-text&quot; href=&quot;#!&quot;>ADICIONADA<a>', 5000);
+                  </script>
+                  <?php
+                }
+                if ($failMsg){
+                  ?>
+                  <script>
+                    Materialize.toast('<span>Lista </span><a class=&quot;btn-flat red-text&quot; href=&quot;#!&quot;>NÃO ADICIONADA<a>', 5000);
+                  </script>
+                  <?php
+                }
+                ?>
                 <div class="row">
                   <div class="input-field col l4 offset-l1" >
                     <input placeholder="Lista-nomes" id="list_name" type="text" class="validate" name="lista-nome" required />

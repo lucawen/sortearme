@@ -1,0 +1,10 @@
+<phpunit backupGlobals="true" >
+	<filter>
+		<whitelist>
+			<directory>/js</directory>
+		</whitelist>
+	</filter>
+	<testsuite>
+		<directory>./</directory>
+	</testsuite>
+</phpunit>

@@ -35,7 +35,7 @@
         }
       }
       setcookie($cookie_name, $cookie_massive);
-
+      echo $cookie_massive;
     } else {
       echo "Comando inexistente";
     }

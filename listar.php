@@ -13,7 +13,9 @@
   if (isset($_POST['num_select'])){
     $fileNumSend =  $_POST['num_fileTrans'];
     $numSend = $_POST['num_select'];
-    header('location: listar.php?action=sortear&num_rep='.$numSend.'&file='.$fileNumSend);
+    echo $fileNumSend;
+    echo $numSend;
+    //header('location: listar.php?action=sortear&num_rep='.$numSend.'&file='.$fileNumSend);
   }
   if (isset($_GET['action'])){
     $action_method = $_GET['action'];

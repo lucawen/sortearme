@@ -37,14 +37,11 @@
         }
         $list_sort_array = explode(';', $sort_result);
         fclose($file_open);
-        header("location: listar.php?action=sortresult&result=".$list_sort_array);
       } else {
         header('location: listar.php?action=sortearNum&file='.$list_file);
       }
     } else if ($action_method == 'sortearNum') {
       $numSelect = $_GET['file'];
-    }else if ($action_method == 'sortresult') {
-      $sortResult = $_GET['result'];
     } else if ($action_method == 'download') {
 
     } else if ($action_method == 'edit') {
@@ -169,12 +166,19 @@
           }
           ?>
           <?php
-          if (isset($sortResult)){
+          if (isset($list_sort_array)){
             ?>
             <div class="row">
               <div class="col s12 m5 l4 offset-l4">
                 <div class="card-panel teal center-align">
-                  <span class="white-text"><?php echo $sortResult; ?></span>
+                  <span class="white-text">
+                    <?php
+                    $list_sort_arrayCount = count($list_sort_array);
+                    for($i=0 ; $i < $list_sort_arrayCount ; $i++ ){
+                      echo $list_sort_array[$i];
+                      }
+                    ?>
+                    </span>
                 </div>
               </div>
             </div>

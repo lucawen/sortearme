@@ -6,6 +6,8 @@
     $lista_nome = $_POST['lista-nome'];
     $lista_texto = $_POST['lista-text'];
 
+    $msgOk = true;
+
     $file_name = $lista_nome;
     $file_name .= '_'.date('d-m-Y');
     $file_name .= '_'.date('H:i:s');
@@ -22,7 +24,6 @@
       $cookie_add = $_COOKIE[$cookie_name].';'.$file_name;
       setcookie($cookie_name, $cookie_add, (time() + (2 * 3600)));
     }
-    $msgOk = true;
   }
 
 ?>
@@ -123,7 +124,7 @@
                         <label for="filled-in-box">Começar sorteio</label>
                       </p>
                       <div class="buttonSubDiv">
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Criar
+                        <button class="btn waves-effect waves-light" type="submit" name="action" onclick="Materialize.toast('<span>Lista </span><a class=&quot;btn-flat yellow-text&quot; href=&quot;#!&quot;>ADICIONADA<a>', 5000)">Criar
                           <i class="mdi-content-send right"></i>
                         </button>
                       </div>

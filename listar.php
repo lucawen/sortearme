@@ -13,9 +13,7 @@
   if (isset($_POST['num_select'])){
     $fileNumSend =  $_POST['num_fileTrans'];
     $numSend = $_POST['num_select'];
-    echo $fileNumSend;
-    echo $numSend;
-    //header('location: listar.php?action=sortear&num_rep='.$numSend.'&file='.$fileNumSend);
+    header("location: listar.php?action=sortear&num_rep=".$numSend."&file=".$fileNumSend);
   }
   if (isset($_GET['action'])){
     $action_method = $_GET['action'];
@@ -36,8 +34,12 @@
           } else {
             $sort_result .= ';'.$lists_array[$f];
           }
+          if ($f == $n_lists){
+            $list_sort_array = explode(';', $sort_result);
+            echo $list_sort_array;
+          }
         }
-        $list_sort_array = explode (';', $sort_result);
+
       } else {
         header('location: listar.php?action=sortearNum&file='.$list_file);
       }

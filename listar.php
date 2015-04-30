@@ -99,11 +99,10 @@
                           <td>'.$cookies_array2array[0].'</td>
                           <td>'.$cookies_array2array[1].'</td>
                           <td>'.$cookies_array2array[2].'</td>
-                          <td>
-                            <i class="small mdi-image-flash-on"></i>
-                            <i class="small mdi-action-get-app"></i>
-                            <i class="small mdi-editor-mode-editn"></i>
-                            <i class="small mdi-action-highlight-remove"></i>
+                            <a href=""><i class="small mdi-image-flash-on tooltipped" data-position="bottom" data-delay="50" data-tooltip="Criar sorteio"></i></a>
+                            <a href=""><i class="small mdi-action-get-app tooltipped" data-position="bottom" data-delay="50" data-tooltip="Baixar lista"></i></a>
+                            <a href=""><i class="small mdi-editor-mode-edit tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar lista"></i></a>
+                            <a href=""><i class="small mdi-action-highlight-remove tooltipped" data-position="bottom" data-delay="50" data-tooltip="Remover lista"></i></a>
                           </td>
                         </tr>
                         ';

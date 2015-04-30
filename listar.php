@@ -37,7 +37,7 @@
         }
         $list_sort_array = explode (';', $sort_result);
       } else {
-        header('location: listar.php?action=sortearNum&file='.$list_file'');
+        header('location: listar.php?action=sortearNum&file='.$list_file);
       }
     } else if ($action_method == 'sortearNum') {
       $numSelect = $_GET['file'];

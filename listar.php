@@ -100,10 +100,10 @@
                           <td>'.$cookies_array2array[0].'</td>
                           <td>'.$cookies_array2array[1].'</td>
                           <td>'.$time_create[0].'</td>
-                            <a ><i class="small mdi-image-flash-on"></i></a>
-                            <a ><i class="small mdi-action-get-app" ></i></a>
-                            <a ><i class="small mdi-editor-mode-edit"></i></a>
-                            <a ><i class="small mdi-action-highlight-remove"></i></a>
+                            <i class="small mdi-image-flash-on"></i>
+                            <i class="small mdi-action-get-app" ></i>
+                            <i class="small mdi-editor-mode-edit"></i>
+                            <i class="small mdi-action-highlight-remove"></i>
                           </td>
                         </tr>
                         ';

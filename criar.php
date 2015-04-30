@@ -90,23 +90,24 @@
     </header>
     <main>
         <div class="container">
+          <?php
+          if ($sucessMsg){
+            ?>
+            <div class="row center-align">
+              <div class="col s12 m5 center-align">
+                <div class="card-panel teal center-align">
+                  <span class="white-text">Lista criada com sucesso!</span>
+                </div>
+              </div>
+            </div>
+            <?php
+            }
+          ?>
           <h5 class="center-align divBTon2">Criar nova lista</h5>
           <div class="center-align divBBon">
             <div class="row">
               <form class="col s12" action="#" method="post">
-                <?php
-                if ($sucessMsg){
-                  ?>
-                  <div class="row">
-                    <div class="col s12 m5 ">
-                      <div class="card-panel teal center-align">
-                        <span class="white-text">Lista criada com sucesso!</span>
-                      </div>
-                    </div>
-                  </div>
-                  <?php
-                  }
-                ?>
+
                 <div class="row">
                   <div class="input-field col l4 offset-l1" >
                     <input placeholder="Lista-nomes" id="list_name" type="text" class="validate" name="lista-nome" required />

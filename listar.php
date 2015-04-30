@@ -206,7 +206,7 @@
                           <td>
                             <a class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Criar sorteio" href="?action=sortear&file='.$cookies_array[$i].'"" ><i class="small mdi-image-flash-on"></i></a>
                             <a class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Baixar lista" href="download.php?file='.$cookies_array[$i].'""><i class="small mdi-action-get-app" ></i></a>
-                            <a class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Editar lista" href="edit.php?file='.$cookies_array[$i].'""><i class="small mdi-editor-mode-edit"></i></a>
+                            <a class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Editar lista" href="editar.php?file='.$cookies_array[$i].'""><i class="small mdi-editor-mode-edit"></i></a>
                             <a class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Deletar lista" href="?action=remove&file='.$cookies_array[$i].'"><i class="small mdi-action-highlight-remove"></i></a>
                           </td>
                         </tr>

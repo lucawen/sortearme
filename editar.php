@@ -4,21 +4,22 @@
   if (!isset($_COOKIE[$cookie_name])){
     header("location: index.php");
   }
-
+  if{!isset($_GET['file']) || !isset($_POST['lista-text']){
+    header("location: index.php");
+  }
 
   if (isset($_GET['file'])){
     $file_edit =  $_GET['file'];
     $fileEditing = file_get_contents('lists/'.$file_edit);
 
-  } else if (isset($_POST['lista-text'])){
+  }
+  if (isset($_POST['lista-text'])){
     $text_edit =  $_POST['lista-text'];
     $file_text =  $_POST['file_Edit'];
     $opFile = fopen('lists/'.$file_text, 'r+');
     fwrite($opFile, $text_edit);
     fclose($opFile);
     header("location: listar.php?msg=sucessEdit");
-  } else {
-    header("location: index.php");
   }
 
 ?>

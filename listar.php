@@ -3,7 +3,7 @@
   $cookie_name = 'nomes_lista';
 
   $cookie_set = $_COOKIE[$cookie_name];
-  $cookies_array = explode("%3", $cookie_set);
+  $cookies_array = explode(";", $cookie_set);
   $n_cookies = count($cookies_array);
 
   //$msgOk = true;
@@ -92,7 +92,6 @@
                   </thead>
                   <tbody>
                     <?php
-                    echo $cookie_set;
                       for($i=0 ; $i < $n_cookies ; $i++ ){
                         $cookies_array2array = explode("_", $cookies_array[$i]);
                         echo "

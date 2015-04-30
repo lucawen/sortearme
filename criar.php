@@ -8,7 +8,7 @@
 
     $file_name = $lista_nome;
     $file_name .= '_'.date('d-m-Y');
-    $file_name .= '_'.date('H-i-s');
+    $file_name .= '_'.date('H:i:s');
     $file_name .= '.txt';
 
     $file_Create = fopen('lists/'.$file_name, 'w');

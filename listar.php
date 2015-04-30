@@ -9,7 +9,6 @@
   $cookie_set = $_COOKIE[$cookie_name];
   $cookies_array = explode(";", $cookie_set);
   $n_cookies = count($cookies_array);
-
   if (isset($_GET['action'])){
     $action_method = $_GET['action'];
     $list_file = $_GET['file'];
@@ -17,9 +16,10 @@
     if ($action_method == 'sortear'){
 
     } else if ($action_method == 'download') {
-
+      header("location: listar.php?msg=sucessDownload");
     } else if ($action_method == 'edit') {
 
+      header("location: listar.php?msg=sucessEdit");
     } else if ($action_method == 'remove') {
       $rCount = true;
       for($k=0 ; $k < $n_cookies ; $k++ ){
@@ -34,11 +34,20 @@
           unlink ('lists/'.$cookies_array[$k]);
         }
       }
-      echo $cookie_massive;
       setcookie($cookie_name, $cookie_massive);
-    //  header("location: listar.php");
+      header("location: listar.php?msg=sucessRemove");
     } else {
-      echo "Comando inexistente";
+      header("location: listar.php?msg=error");
+    }
+  }
+
+  if (isset($_GET['msg'])){
+    if($_GET['msg'] == 'sucessRemove'){
+      $sucessMsg = "Removido com sucesso!";
+    } else if ($_GET['msg'] == 'sucessEdit'){
+      $sucessMsg = "Editado com sucesso!";
+    }else{
+      $failMsg = "Ocorreu um problema.";
     }
   }
 
@@ -98,6 +107,29 @@
 
     <main>
         <div class="container">
+          <?php
+          if ($sucessMsg){
+            ?>
+            <div class="row">
+              <div class="col s12 m5 l4 offset-l4">
+                <div class="card-panel teal center-align">
+                  <span class="white-text"><?php echo $sucessMsg; ?></span>
+                </div>
+              </div>
+            </div>
+            <?php
+          } else {
+            ?>
+            <div class="row">
+              <div class="col s12 m5 l4 offset-l4">
+                <div class="card-panel teal center-align">
+                  <span class="white-text"><?php echo $failMsg; ?></span>
+                </div>
+              </div>
+            </div>
+            <?php
+          }
+          ?>
           <h5 class="center-align divBTon2">Minhas Listas</h5>
           <div class="center-align divBBon">
             <div class="row">

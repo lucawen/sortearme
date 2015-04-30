@@ -94,8 +94,7 @@
                     <?php
                       for($i=0 ; $i < $n_cookies ; $i++ ){
                         $cookies_array2array = explode("_", $cookies_array[$i]);
-                        $cookie_tCreate = $cookies_array2array[2];
-                        $time_create = explode('.', $cookie_tCreate)[0];
+                        $time_create = explode(".", $cookies_array2array[2], [0]);
                         echo '
                         <tr>
                           <td>'.$cookies_array2array[0].'</td>

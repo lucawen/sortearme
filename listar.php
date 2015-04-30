@@ -9,14 +9,40 @@
   $cookie_set = $_COOKIE[$cookie_name];
   $cookies_array = explode(";", $cookie_set);
   $n_cookies = count($cookies_array);
+
+  if (isset($_GET['num_fileTrans'])){
+    $fileNumSend =  $_GET['num_fileTrans'];
+    $numSend = $_GET['num_fileTrans'];
+    header('location: listar.php?action=sortear&file='.$fileNumSend.'&num_rep='.$numSend);
+  }
   if (isset($_GET['action'])){
     $action_method = $_GET['action'];
     $list_file = $_GET['file'];
 
     if ($action_method == 'sortear'){
+      $file_open = fopen('lists/'.$list_file, 'r');
+      $lists_array = explode ('\n', $file_open);
 
+      if (isset($_GET['num_rep'])){
+        $n_lists = $_GET['num_rep'];
+        $sCount = true;
+        for($f=0 ; $f < $n_lists ; $k++ ){
+          sort($lists_array);
+          if ($sCount == true) {
+            $sort_result .= $lists_array[$f];
+            $sCount = false;
+          } else {
+            $sort_result .= ';'.$lists_array[$f];
+          }
+        }
+        $list_sort_array = explode (';', $sort_result);
+      } else {
+        header('location: listar.php?action=sortearNum&file='.$list_file'');
+      }
+    } else if ($action_method == 'sortearNum') {
+      $numSelect = $_GET['file'];
     } else if ($action_method == 'download') {
-      header("location: listar.php?msg=sucessDownload");
+
     } else if ($action_method == 'edit') {
 
       header("location: listar.php?msg=sucessEdit");
@@ -108,7 +134,30 @@
     <main>
         <div class="container">
           <?php
-          if ($sucessMsg){
+          if (isset($numSelect)){
+            ?>
+            <div class="row">
+              <div class="col s12 m5 l4 offset-l4">
+                <div class="card-panel teal center-align">
+                  <form action="#" method="get">
+                    <div class="col s12 m5 l4 offset-l4">
+                      <input  id="num_select" name="num_select" type="text" class="validate" required/>
+                      <label for="num_select">Quantidade para sortear números</label>
+                      <input type="hidden" name="num_fileTrans" value="<?php echo $numSelect;?>" />
+                      <button class="btn waves-effect waves-light" type="submit" name="action">Sortear
+                       <i class="mdi-content-send right"></i>
+                     </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <?php
+          }
+          ?>
+          <?php
+          if (isset($sucessMsg)){
             ?>
             <div class="row">
               <div class="col s12 m5 l4 offset-l4">

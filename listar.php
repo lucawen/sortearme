@@ -94,7 +94,7 @@
                     <?php
                       for($i=0 ; $i < $n_cookies ; $i++ ){
                         $cookies_array2array = explode("_", $cookies_array[$i]);
-                        echo "
+                        echo '
                         <tr>
                           <td>".$cookies_array2array[0]."</td>
                           <td>".$cookies_array2array[1]."</td>
@@ -106,7 +106,7 @@
                             <i class="mdi-action-highlight-remove"></i>
                           </td>
                         </tr>
-                        ";
+                        ';
                         }
                     ?>
                   </tbody>

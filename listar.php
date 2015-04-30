@@ -92,6 +92,7 @@
                   </thead>
                   <tbody>
                     <?php
+                    echo $cookie_set;
                       for($i=0 ; $i < $n_cookies ; $i++ ){
                         $cookies_array2array = explode("_", $cookies_array[$i]);
                         echo "

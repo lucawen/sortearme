@@ -10,6 +10,33 @@
   $cookies_array = explode(";", $cookie_set);
   $n_cookies = count($cookies_array);
 
+  if (isset($_GET['action'])){
+    $action_method = $_GET['action'];
+    $list_file = $_GET['file'];
+
+    if ($action_method == 'sortear'){
+
+    } else if ($action_method == 'download') {
+
+    } else if ($action_method == 'edit') {
+
+    } else if ($action_method == 'remove') {
+      $rCount = true;
+      for($k=0 ; $k < $n_cookies ; $k++ ){
+        if ($cookies_array[$k] !== $list_file)
+          if ($rCount == true) {
+            $cookie_massive = $cookies_array[$k];
+            $rCount = false;
+          } else {
+            $cookie_massive .= ';'.$cookies_array[$k];
+          }
+        }
+      }
+      setcookie($cookie_name, $cookie_massive);
+    } else {
+      echo "Comando inexistente";
+    }
+  }
 
 ?>
 <!DOCTYPE html>
@@ -91,10 +118,10 @@
                           <td>'.$cookies_array2array[1].'</td>
                           <td>'.$time_create[0].'</td>
                           <td>
-                            <a class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Criar sorteio"><i class="small mdi-image-flash-on"></i></a>
-                            <a class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Baixar lista"><i class="small mdi-action-get-app" ></i></a>
-                            <a class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Editar lista"><i class="small mdi-editor-mode-edit"></i></a>
-                            <a class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Deletar lista"><i class="small mdi-action-highlight-remove"></i></a>
+                            <a class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Criar sorteio" href="?action=sortear&file='.$cookies_array[$i].'"" ><i class="small mdi-image-flash-on"></i></a>
+                            <a class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Baixar lista" href="?action=download&file='.$cookies_array[$i].'""><i class="small mdi-action-get-app" ></i></a>
+                            <a class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Editar lista" href="?action=edit&file='.$cookies_array[$i].'""><i class="small mdi-editor-mode-edit"></i></a>
+                            <a class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Deletar lista" href="?action=remove&file='.$cookies_array[$i].'"><i class="small mdi-action-highlight-remove"></i></a>
                           </td>
                         </tr>
                         ';

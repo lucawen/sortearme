@@ -6,7 +6,7 @@
     $lista_nome = $_POST['lista-nome'];
     $lista_texto = $_POST['lista-text'];
 
-    $msgOk = true;
+    $msgOk = true; // Materialize.toast('<span>Lista </span><a class=&quot;btn-flat green-text&quot; href=&quot;#!&quot;>ADICIONADA<a>', 5000)
 
     $file_name = $lista_nome;
     $file_name .= '_'.date('d-m-Y');
@@ -48,10 +48,6 @@
     }(document, 'script', 'facebook-jssdk'));
 
     $(".button-collapse").sideNav();
-
-    function msgShow(){
-      Materialize.toast('<span>Lista </span><a class=&quot;btn-flat yellow-text&quot; href=&quot;#!&quot;>ADICIONADA<a>', 5000);
-    }
     </script>
 
     <header>
@@ -86,16 +82,6 @@
         </nav>
       </div>
     </header>
-    <?php
-      if (isset($_POST['lista-text'])){
-        if ($msgOk == true){
-          echo '<script type="text/javascript">'
-             , 'msgShow();'
-             , '</script>'
-          ;
-        }
-      }
-    ?>
     <main>
         <div class="container">
           <h5 class="center-align divBTon2">Criar nova lista</h5>
@@ -104,12 +90,12 @@
               <form class="col s12" action="#" method="post">
                 <div class="row">
                   <div class="input-field col l4 offset-l1" >
-                    <input placeholder="Lista-nomes" id="list_name" type="text" class="validate" name="lista-nome">
+                    <input placeholder="Lista-nomes" id="list_name" type="text" class="validate" name="lista-nome" required />
                     <label for="list_name">Nome da lista</label>
                   </div>
                   <div class="input-field col l6" >
                     <i class="mdi-editor-mode-edit prefix "></i>
-                    <textarea id="icon_prefix2" class="materialize-textarea" name="lista-text"></textarea>
+                    <textarea id="icon_prefix2" class="materialize-textarea" name="lista-text" required></textarea>
                     <label for="icon_prefix2">Conteúdo da lista</label>
                   </div>
                   <div class="row">
@@ -124,7 +110,7 @@
                         <label for="filled-in-box">Começar sorteio</label>
                       </p>
                       <div class="buttonSubDiv">
-                        <button class="btn waves-effect waves-light" type="submit" name="action" onclick="Materialize.toast('<span>Lista </span><a class=&quot;btn-flat yellow-text&quot; href=&quot;#!&quot;>ADICIONADA<a>', 5000)">Criar
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Criar
                           <i class="mdi-content-send right"></i>
                         </button>
                       </div>

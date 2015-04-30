@@ -24,6 +24,7 @@
       $cookie_add = $_COOKIE[$cookie_name].';'.$file_name;
       setcookie($cookie_name, $cookie_add, (time() + (2 * 3600)));
     }
+    header("location: criar.php");
   }
 
 ?>

@@ -22,10 +22,7 @@
       $cookie_add = $_COOKIE[$cookie_name].';'.$file_name;
       setcookie($cookie_name, $cookie_add, (time() + (2 * 3600)));
     }
-    echo '<script type="text/javascript">'
-       , 'msgShow();'
-       , '</script>'
-    ;
+    $msgOk = true;
   }
 
 ?>
@@ -47,7 +44,13 @@
       js = d.createElement(s); js.id = id;
       js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.3&appId=1395621250699834";
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    }(document, 'script', 'facebook-jssdk'));
+    
+    $(".button-collapse").sideNav();
+    function msgShow(){
+      Materialize.toast('<span>Lista </span><a class=&quot;btn-flat yellow-text&quot; href=&quot;#!&quot;>ADICIONADA<a>', 5000);
+    }
+    </script>
 
     <header>
       <div class="navbar-fixed">
@@ -84,15 +87,11 @@
     <?php
       if (isset($_POST['lista-text'])){
         if ($msgOk == true){
-          ?>
-          <script> Materialize.toast('<span>Lista criada com</span><a class=&quot;btn-flat green-text&quot; href=&quot;#!&quot;>SUCESSO<a>', 5000) </script>
-        <?php
-        } else {
-          ?>
-          <script> Materialize.toast('<span>Houve um</span><a class=&quot;btn-flat red-text&quot; href=&quot;#!&quot;>PROBLEMA<a>', 5000) </script>
-        <?php
+          echo '<script type="text/javascript">'
+             , 'msgShow();'
+             , '</script>'
+          ;
         }
-      }
     ?>
     <main>
         <div class="container">
@@ -174,11 +173,6 @@
       $(document).ready(function(){
       $('.parallax').parallax();
     });
-
-      $(".button-collapse").sideNav();
-      function msgShow(){
-        Materialize.toast('<span>Lista </span><a class=&quot;btn-flat yellow-text&quot; href=&quot;#!&quot;>ADICIONADA<a>', 5000);
-      }
     </script>
   </body>
 </html>

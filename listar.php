@@ -100,6 +100,7 @@
                           <td>'.$cookies_array2array[0].'</td>
                           <td>'.$cookies_array2array[1].'</td>
                           <td>'.$time_create[0].'</td>
+                          <td>
                             <a class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Criar sorteio"><i class="small mdi-image-flash-on"></i></a>
                             <a class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Baixar lista"><i class="small mdi-action-get-app" ></i></a>
                             <a class="tooltipped" data-position="bottom" data-delay="30" data-tooltip="Editar lista"><i class="small mdi-editor-mode-edit"></i></a>

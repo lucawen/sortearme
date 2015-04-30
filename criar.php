@@ -6,8 +6,6 @@
     $lista_nome = $_POST['lista-nome'];
     $lista_texto = $_POST['lista-text'];
 
-    $msgOk = true; // Materialize.toast('<span>Lista </span><a class=&quot;btn-flat green-text&quot; href=&quot;#!&quot;>ADICIONADA<a>', 5000)
-
     $file_name = $lista_nome;
     $file_name .= '_'.date('d-m-Y');
     $file_name .= '_'.date('H:i:s');
@@ -19,10 +17,10 @@
     fclose($file_Create);
 
     if (!isset($_COOKIE[$cookie_name])) {
-      setcookie($cookie_name, $file_name, (time() + (2 * 3600)));
+      setcookie($cookie_name, $file_name, time()+31556926);
     } else {
       $cookie_add = $_COOKIE[$cookie_name].';'.$file_name;
-      setcookie($cookie_name, $cookie_add, (time() + (2 * 3600)));
+      setcookie($cookie_name, $cookie_add, time()+31556926);
     }
     header("location: criar.php?msg=sucess");
   }

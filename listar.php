@@ -31,7 +31,7 @@
             $cookie_massive .= ';'.$cookies_array[$k];
           }
         } else {
-          unlink ($cookies_array[$k]);
+          unlink ('lists/'.$cookies_array[$k]);
         }
       }
       setcookie($cookie_name, $cookie_massive);

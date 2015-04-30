@@ -10,8 +10,6 @@
   $cookies_array = explode(";", $cookie_set);
   $n_cookies = count($cookies_array);
 
-  //$msgOk = true;
-
 
 ?>
 <!DOCTYPE html>
@@ -66,19 +64,7 @@
         </nav>
       </div>
     </header>
-    <?php
-      if (isset($_POST['lista-text'])){
-        if ($msgOk == true){
-          ?>
-          <script> Materialize.toast('<span>Lista criada com</span><a class=&quot;btn-flat green-text&quot; href=&quot;#!&quot;>SUCESSO<a>', 5000) </script>
-        <?php
-        } else {
-          ?>
-          <script> Materialize.toast('<span>Houve um</span><a class=&quot;btn-flat red-text&quot; href=&quot;#!&quot;>PROBLEMA<a>', 5000) </script>
-        <?php
-        }
-      }
-    ?>
+
     <main>
         <div class="container">
           <h5 class="center-align divBTon2">Minhas Listas</h5>

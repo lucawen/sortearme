@@ -22,7 +22,10 @@
       $cookie_add = $_COOKIE[$cookie_name].';'.$file_name;
       setcookie($cookie_name, $cookie_add, (time() + (2 * 3600)));
     }
-    $msgOk = true;
+    echo '<script type="text/javascript">'
+       , 'Materialize.toast('<span>Sua lista (''.$lista_nome.'') foi criada com </span><a class=&quot;btn-flat yellow-text&quot; href=&quot;#!&quot;>SUCESSO!<a>', 5000);'
+       , '</script>'
+    ;
   }
 
 ?>

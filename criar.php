@@ -23,7 +23,7 @@
       setcookie($cookie_name, $cookie_add, (time() + (2 * 3600)));
     }
     echo '<script type="text/javascript">'
-       , 'Materialize.toast('<span>Sua lista (''.$lista_nome.'') foi criada com </span><a class=&quot;btn-flat yellow-text&quot; href=&quot;#!&quot;>SUCESSO!<a>', 5000);'
+       , 'Materialize.toast('<span>Sua lista foi criada com</span><a class=&quot;btn-flat green-text&quot; href=&quot;#!&quot;>SUCESSO!<a>', 5000);'
        , '</script>'
     ;
   }

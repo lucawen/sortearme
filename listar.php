@@ -100,10 +100,10 @@
                           <td>$cookies_array2array[1]</td>
                           <td>$cookies_array2array[2]</td>
                           <td>
-                            <a href="flash.php"><i class="small mdi-image-flash-on"></i></a>
-                            <a href="get.php"><i class="small mdi-action-get-app"></i></a>
-                            <a href="edit.php"><i class="small mdi-editor-mode-editn"></i></a>
-                            <a href="remove.php"><i class="small mdi-action-highlight-remove"></i></a>
+                            <i class="small mdi-image-flash-on"></i>
+                            <i class="small mdi-action-get-app"></i>
+                            <i class="small mdi-editor-mode-editn"></i>
+                            <i class="small mdi-action-highlight-remove"></i>
                           </td>
                         </tr>
                         ";

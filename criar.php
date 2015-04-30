@@ -88,7 +88,7 @@
     <?php
       if (isset($_POST['lista-text'])){
         if ($msgOk == true){
-          echo '<script>'
+          echo '<script type="text/javascript">'
              , 'msgShow();'
              , '</script>'
           ;

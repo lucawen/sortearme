@@ -12,7 +12,7 @@
 
   if (isset($_GET['num_fileTrans'])){
     $fileNumSend =  $_GET['num_fileTrans'];
-    $numSend = $_GET['num_fileTrans'];
+    $numSend = $_GET['num_select'];
     header('location: listar.php?action=sortear&file='.$fileNumSend.'&num_rep='.$numSend);
   }
   if (isset($_GET['action'])){
@@ -137,20 +137,19 @@
           if (isset($numSelect)){
             ?>
             <div class="row">
-              <div class="col s12 m5 l8 offset-l2">
-                <div class="card-panel teal center-align">
-                  <form action="#" method="get">
-                      <input  id="num_select" name="num_select" type="text" class="validate" required/>
-                      <label for="num_select">Quantidade para sortear números</label>
-                      <input type="hidden" name="num_fileTrans" value="<?php echo $numSelect;?>" />
-                      <button class="btn waves-effect waves-light" type="submit" name="action">Sortear
-                       <i class="mdi-content-send right"></i>
-                     </button>
-                  </form>
+              <form class="col l8 offset-l2">
+                <div class="row">
+                  <div class="input-field col l6">
+                    <input  id="num_select" name="num_select" type="text" class="validate" required/>
+                    <label for="num_select">Quantidade para sortear números</label>
+                    <input type="hidden" name="num_fileTrans" value="<?php echo $numSelect;?>" />
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Sortear
+                     <i class="mdi-content-send right"></i>
+                   </button>
+                  </div>
                 </div>
               </div>
             </div>
-
             <?php
           }
           ?>

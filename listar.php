@@ -43,8 +43,9 @@
     } else if ($action_method == 'sortearNum') {
       $numSelect = $_GET['file'];
     } else if ($action_method == 'download') {
-      header('Content-disposition: attachment; filename=lists/'.$list_file);
+      header('Content-disposition: attachment; filename='.$list_file);
       header('Content-type: text/plain');
+      readfile('lists/'.$list_file);
     } else if ($action_method == 'edit') {
 
       header("location: listar.php?msg=sucessEdit");

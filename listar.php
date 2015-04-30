@@ -80,7 +80,7 @@
           <h5 class="center-align divBTon2">Minhas Listas</h5>
           <div class="center-align divBBon">
             <div class="row">
-              <div class="col l6 offset-l3">
+              <div class="col l8 offset-l2">
                 <table class="hoverable responsive-table centered">
                   <thead>
                     <tr>
@@ -96,14 +96,14 @@
                         $cookies_array2array = explode("_", $cookies_array[$i]);
                         echo '
                         <tr>
-                          <td>".$cookies_array2array[0]."</td>
-                          <td>".$cookies_array2array[1]."</td>
-                          <td>".$cookies_array2array[2]."</td>
+                          <td>'.$cookies_array2array[0].'</td>
+                          <td>'.$cookies_array2array[1].'</td>
+                          <td>'.$cookies_array2array[2].'</td>
                           <td>
-                            <i class="mdi-image-flash-on"></i>
-                            <i class="mdi-action-get-app"></i>
-                            <i class="mdi-editor-mode-editn"></i>
-                            <i class="mdi-action-highlight-remove"></i>
+                            <i class="small mdi-image-flash-on"></i>
+                            <i class="small mdi-action-get-app"></i>
+                            <i class="small mdi-editor-mode-editn"></i>
+                            <i class="small mdi-action-highlight-remove"></i>
                           </td>
                         </tr>
                         ';

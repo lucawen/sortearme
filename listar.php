@@ -81,7 +81,7 @@
           <div class="center-align divBBon">
             <div class="row">
               <div class="col l6 offset-l3">
-                <table class="hoverable responsive-table">
+                <table class="hoverable responsive-table centered">
                   <thead>
                     <tr>
                         <th data-field="name">Nome</th>
@@ -99,7 +99,8 @@
                           <td>$cookies_array2array[0]</td>
                           <td>$cookies_array2array[1]</td>
                           <td>$cookies_array2array[2]</td>
-                          <td>Opções</td>
+                          <td><a href="text.php"><i class="small mdi-image-flash-on"></i></a><a href="text.php"><i class="small mdi-action-get-app"></i></a><a href="small text.php"><i class="small mdi-editor-mode-edit"></i></a><a href="text.php"><i class="small mdi-action-highlight-remove
+"></i></a></td>
                         </tr>
                         ";
                         }

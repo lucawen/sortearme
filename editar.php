@@ -15,7 +15,7 @@
   if (isset($_POST['lista-text'])){
     $text_edit =  $_POST['lista-text'];
     $file_text =  $_POST['file_Edit'];
-    $opFile = fopen('lists/'.$file_text, 'r+');
+    $opFile = fopen('lists/'.$file_text, 'w+');
     fwrite($opFile, $text_edit);
     fclose($opFile);
     header("location: listar.php?msg=sucessEdit");

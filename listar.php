@@ -30,10 +30,12 @@
           } else {
             $cookie_massive .= ';'.$cookies_array[$k];
           }
+        } else {
+          unlink ($cookies_array[$k]);
         }
       }
       setcookie($cookie_name, $cookie_massive);
-      unlink ($list_file);
+
     } else {
       echo "Comando inexistente";
     }

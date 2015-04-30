@@ -21,7 +21,7 @@
 
     if ($action_method == 'sortear'){
       $file_open = fopen('lists/'.$list_file, 'r');
-      $lists_array = explode ('\n', $file_open);
+      $lists_array = explode ("\n", fread($file_open, filesize('lists/'.$list_file)));
 
       if (isset($_GET['num_rep'])){
         $n_lists = $_GET['num_rep'];
@@ -34,12 +34,9 @@
           } else {
             $sort_result .= ';'.$lists_array[$f];
           }
-          if ($f == $n_lists){
-            $list_sort_array = explode(';', $sort_result);
-            echo $list_sort_array;
-          }
         }
-
+        $list_sort_array = explode(';', $sort_result);
+        fclose($file_open);
       } else {
         header('location: listar.php?action=sortearNum&file='.$list_file);
       }

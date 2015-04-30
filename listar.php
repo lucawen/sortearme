@@ -3,7 +3,7 @@
   $cookie_name = "nomes_lista";
 
   if (!isset($_COOKIE[$cookie_name])){
-    header("location:$redirect");
+    header("location: index.php");
   }
 
   $cookie_set = $_COOKIE[$cookie_name];

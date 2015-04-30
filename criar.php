@@ -30,8 +30,6 @@
   if (isset($_GET['msg'])){
     if($_GET['msg'] == 'sucess'){
       $sucessMsg = "Lista adicionada.";
-    } else {
-      $failMsg = "Ocorrou algum problema.";
     }
   }
 ?>
@@ -99,18 +97,15 @@
                 <?php
                 if ($sucessMsg){
                   ?>
-                  <script>
-                    Materialize.toast('<span>Lista </span><a class=&quot;btn-flat green-text&quot; href=&quot;#!&quot;>ADICIONADA<a>', 5000);
-                  </script>
+                  <div class="row">
+                    <div class="col s12 m5">
+                      <div class="card-panel teal">
+                        <span class="white-text">Lista criada com sucesso!</span>
+                      </div>
+                    </div>
+                  </div>
                   <?php
-                }
-                if ($failMsg){
-                  ?>
-                  <script>
-                    Materialize.toast('<span>Lista </span><a class=&quot;btn-flat red-text&quot; href=&quot;#!&quot;>NÃO ADICIONADA<a>', 5000);
-                  </script>
-                  <?php
-                }
+                  }
                 ?>
                 <div class="row">
                   <div class="input-field col l4 offset-l1" >

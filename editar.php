@@ -4,7 +4,7 @@
   if (!isset($_COOKIE[$cookie_name])){
     header("location: index.php");
   }
-  if{!isset($_GET['file']) || !isset($_POST['lista-text']){
+  if(!isset($_GET['file']) || !isset($_POST['lista-text'])){
     header("location: index.php");
   }
 

@@ -58,8 +58,8 @@
             <a href="index.php" class="brand-logo"><span class="logoStyle text-accent-3">SORTEAR</span><span class="logoStyleExt">.ME</span></a>
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
             <ul id="slide-out" class="side-nav">
-              <li><a href="contato.php">Contato</a></li>
-              <li class="active"><a href="#">Nova Lista</a></li>
+              <li class="active"><a href="#">Contato</a></li>
+              <li><a href="criar.php">Nova Lista</a></li>
               <?php
               if (isset($_COOKIE[$cookie_name])) {
                 ?>
@@ -69,7 +69,7 @@
               ?>
             </ul>
             <ul id="nav-mobile" class="hide-on-med-and-down">
-              <div class="navTop"><li class="left"><a href="contato.php">Contato</a></li></div>
+              <div class="navTop"><li class="left active"><a href="#">Contato</a></li></div>
               <?php
               if (isset($_COOKIE[$cookie_name])) {
                 ?>
@@ -77,7 +77,7 @@
                 <?php
               }
               ?>
-              <li class="right active"><a href="#">Nova Lista</a></li>
+              <li class="right"><a href="criar.php">Nova Lista</a></li>
             </ul>
           </div>
         </nav>
@@ -123,18 +123,17 @@
                  <input id="subject" type="text" class="validate" required>
                  <label for="subject">Assunto</label>
                </div>
+               <div class="row">
                 <div class="row">
                   <div class="input-field col s6">
                     <i class="mdi-editor-mode-edit prefix"></i>
-                    <textarea id="msg" class="message-area"></textarea>
-                    <label for="msg">Sua Mensagem</label>
-                  </div>
-                  <div class="input-field col s6">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                     <i class="mdi-content-send right"></i>
-                   </button>
+                    <textarea id="msgText" class="materialize-textarea" name="msg"></textarea>
+                    <label for="msgText">Sua Mensagem</label>
                   </div>
                 </div>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                 <i class="mdi-content-send right"></i>
+               </button>
               </div>
              </div>
            </form>
@@ -154,8 +153,8 @@
             <h5 class="white-text">Links</h5>
             <ul>
               <li><a class="grey-text text-lighten-3" href="index.php">Início</a></li>
-              <li><a class="grey-text text-lighten-3" href="contato.php">Contato</a></li>
-              <li><a class="grey-text text-lighten-3" href="#">Nova Lista</a></li>
+              <li><a class="grey-text text-lighten-3" href="#">Contato</a></li>
+              <li><a class="grey-text text-lighten-3" href="criar.php">Nova Lista</a></li>
               <?php
               if (isset($_COOKIE[$cookie_name])) {
                 ?>

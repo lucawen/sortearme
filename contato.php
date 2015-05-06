@@ -96,7 +96,7 @@
             <div class="row">
               <div class="col s12 m5 l4 offset-l4">
                 <div class="card-panel teal center-align">
-                  <span class="white-text">Lista criada com sucesso!</span>
+                  <span class="white-text"><?php echo $sucessMsg;?></span>
                 </div>
               </div>
             </div>

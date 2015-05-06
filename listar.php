@@ -50,9 +50,6 @@
       }
     } else if ($action_method == 'sortearNum') {
       $numSelect = $_GET['file'];
-      if (isset($_GET['numFail'])){
-        $failMsg = "Sua lista é menor que o especificado.";
-      }
     } else if ($action_method == 'remove') {
       $rCount = true;
       for($k=0 ; $k < $n_cookies ; $k++ ){
@@ -79,11 +76,12 @@
       $sucessMsg = "Removido com sucesso!";
     } else if ($_GET['msg'] == 'sucessEdit'){
       $sucessMsg = "Editado com sucesso!";
+    } else if ($_GET['msg'] == 'numFail'){
+      $failMsg = "Sua lista é menor que o especificado para sortear.";
     }else{
       $failMsg = "Ocorreu um problema.";
     }
   }
-
 ?>
 <!DOCTYPE html>
 <html>

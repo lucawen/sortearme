@@ -2,28 +2,30 @@
   date_default_timezone_set("America/Sao_Paulo");
   $cookie_name = 'nomes_lista';
 
-  $f_name = $_POST['first_name'];
-  $l_name = $_POST['last_name'];
-  $email = $_POST['email'];
-  $subject = $_POST['subject'];
-  $msg = $_POST['msg'];
+  if (isset($_POST['first_name'])){
+    $f_name = $_POST['first_name'];
+    $l_name = $_POST['last_name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $msg = $_POST['msg'];
 
-  $headers  = "From: $email\r\n";
-  $headers .= "Reply-To: $email\r\n";
+    $headers  = "From: $email\r\n";
+    $headers .= "Reply-To: $email\r\n";
 
-  $mail_msg = 'Mensagem de contato. Assunto:'.$subject.'\n';
-  $mail_msg = 'Nome:'.$f_name.' '.$l_name.'\n';
-  $mail_msg = 'Email:'.$email.'\n';
-  $mail_msg = 'Mensagem:'.$msg.'\n';
+    $mail_msg = 'Mensagem de contato. Assunto:'.$subject.'\n';
+    $mail_msg = 'Nome:'.$f_name.' '.$l_name.'\n';
+    $mail_msg = 'Email:'.$email.'\n';
+    $mail_msg = 'Mensagem:'.$msg.'\n';
 
-  $mail_provider = 'contato@sortear.me';
-  $subject_mail = 'Nova mensagem de contato de '.$f_name.' '.$l_name;
+    $mail_provider = 'contato@sortear.me';
+    $subject_mail = 'Nova mensagem de contato de '.$f_name.' '.$l_name;
 
-  $status = mail($mail_provider, $subject_mail, $mail_msg, $headers);
-  if($status) {
-    $sucessMsg = "Mensagem enviada com sucesso!";
-  } else {
-    $sucessMsg = "Ocorreu um erro ao tentar realizar esta ação. Tente novamente.";
+    $status = mail($mail_provider, $subject_mail, $mail_msg, $headers);
+    if($status) {
+      $sucessMsg = "Mensagem enviada com sucesso!";
+    } else {
+      $sucessMsg = "Ocorreu um erro ao tentar realizar esta ação. Tente novamente.";
+    }
   }
 ?>
 <!DOCTYPE html>
@@ -121,15 +123,18 @@
                  <input id="subject" type="text" class="validate" required>
                  <label for="subject">Assunto</label>
                </div>
-                <form class="col s12">
-                  <div class="row">
-                    <div class="input-field col s6">
-                      <i class="mdi-editor-mode-edit prefix"></i>
-                      <textarea id="msg" class="message-area"></textarea>
-                      <label for="msg">Sua Mensagem</label>
-                    </div>
+                <div class="row">
+                  <div class="input-field col s6">
+                    <i class="mdi-editor-mode-edit prefix"></i>
+                    <textarea id="msg" class="message-area"></textarea>
+                    <label for="msg">Sua Mensagem</label>
                   </div>
-                </form>
+                  <div class="input-field col s6">
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                     <i class="mdi-content-send right"></i>
+                   </button>
+                  </div>
+                </div>
               </div>
              </div>
            </form>

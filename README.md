@@ -1,11 +1,17 @@
+![alt tag](https://raw.githubusercontent.com/lucawen/sortearme/alpha/img/BannerGithub.jpg?token=ABTU2OsD8n7IdT8zOf_OnPchy3buy0wiks5VU69RwA%3D%3D)
 # Sortear.me
+![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
+[![GitHub Stars](https://img.shields.io/github/stars/lucawen/sortearme.svg?style=flat-square)](https://github.com/lucawen/sortearme/stargazers) 
+[![GitHub Issues](https://img.shields.io/github/issues/lucawen/sortearme.svg?style=flat-square)](https://github.com/lucawen/sortearme/issues) 
+[![Current Version](https://img.shields.io/badge/version-0.1-green.svg?style=flat-square)](https://github.com/lucawen/sortearme) 
+[![Live Demo](https://img.shields.io/badge/demo-online-green.svg?style=flat-square)](http://sortear.me/)
 
 Sortear.me é uma plataforma onde você pode sortear tudo o que quiser de forma prática e rápida.
 
 
 
 ### Versão
-0.0.119
+0.1.119
 
 ### Instalação
 

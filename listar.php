@@ -19,7 +19,7 @@
     if ($n_keys > $numSend) {
       header("location: listar.php?action=sortear&num_rep=".$numSend."&file=".$fileNumSend);
     } else {
-      header('location: listar.php?action=sortearNum&file='.$fileNumSend.'$msg=numFail');
+      header('location: listar.php?action=sortearNum&file='.$fileNumSend.'&msg=numFail');
     }
 
   }

@@ -178,7 +178,7 @@ $cookie_name = 'nomes_lista';
                     </div>
                     <div class="col s8 m8 l8">
                       <span class="black-text">
-                        <h5>Matheus Augusto</h5>
+                        <h5>Augusto Ventura</h5>
                         <h6>Research / Counselor</h6>
                       </span>
                     </div>

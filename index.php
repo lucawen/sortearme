@@ -19,7 +19,10 @@ $cookie_name = 'nomes_lista';
       js = d.createElement(s); js.id = id;
       js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.3&appId=1395621250699834";
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    }(document, 'script', 'facebook-jssdk'));
+
+    $(".button-collapse").sideNav();
+    </script>
 
     <header>
       <div class="navbar-fixed">
@@ -175,7 +178,7 @@ $cookie_name = 'nomes_lista';
                     </div>
                     <div class="col s8 m8 l8">
                       <span class="black-text">
-                        <h5>Matheus Augusto</h5>
+                        <h5>Augusto Ventura</h5>
                         <h6>Research / Counselor</h6>
                       </span>
                     </div>
@@ -197,7 +200,8 @@ $cookie_name = 'nomes_lista';
           <div class="col l6 s12">
             <h5 class="white-text">Sobre</h5>
             <p class="grey-text text-lighten-4">Somos uma organização totalmente sem fins lucrativos. Este projeto pode ser encontrado no GitHub e baixado gratuitamente, se atribuido os créditos.</p>
-            <p><div class="fb-like" data-href="https://www.facebook.com/sortearme" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div><p>
+            <p><div class="ImgSocial"><a href="https://www.facebook.com/sortearme"><img class="responsive-img" height="42" width="42" src="img/facebook-icon.png" alt="Facebook"/></a><a href="https://github.com/lucawen/sortearme"><img src="img/github-icon.png" class="responsive-img" height="42" width="42" alt="Github"/></a></div></p>
+            <p><div class="fb-like" data-href="https://www.facebook.com/sortearme" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div><p>
           </div>
           <div class="col l4 offset-l2 s12">
             <h5 class="white-text">Links</h5>

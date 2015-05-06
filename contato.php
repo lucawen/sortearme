@@ -1,26 +1,37 @@
 <?php
   date_default_timezone_set("America/Sao_Paulo");
+  $cookie_name = 'nomes_lista';
 
-  $cookie_name = "nomes_lista";
+  if (isset($_POST['first_name'])){
+    $f_name = $_POST['first_name'];
+    if(isset($_POST['last_name'])){
+      $l_name = $_POST['last_name'];
+    } else {
+      $l_name = "";
+    }
 
-  if (!isset($_COOKIE[$cookie_name])){
-    header("location: index.php");
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $msg = $_POST['msg'];
+
+    $headers  = "From: $email\r\n";
+    $headers .= "Reply-To: $email\r\n";
+
+    $mail_msg = 'Mensagem de contato. Assunto:'.$subject.'<br />';
+    $mail_msg .= 'Nome:'.$f_name.' '.$l_name.'<br />';
+    $mail_msg .= 'Email:'.$email.'<br />';
+    $mail_msg .= 'Mensagem:'.$msg.'<br />';
+
+    $mail_provider = 'contato@sortear.me';
+    $subject_mail = 'Nova mensagem de contato de '.$f_name.' '.$l_name;
+
+    $status = mail($mail_provider, $subject_mail, $mail_msg, $headers);
+    if($status) {
+      $sucessMsg = "Mensagem enviada com sucesso!";
+    } else {
+      $sucessMsg = "Ocorreu um erro ao tentar realizar esta ação. Tente novamente.";
+    }
   }
-
-  if (isset($_GET['file'])){
-    $file_edit =  $_GET['file'];
-    $fileEditing = file_get_contents('lists/'.$file_edit);
-
-  }
-  if (isset($_POST['lista-text'])){
-    $text_edit =  $_POST['lista-text'];
-    $file_text =  $_POST['file_Edit'];
-    $opFile = fopen('lists/'.$file_text, 'w+');
-    fwrite($opFile, $text_edit);
-    fclose($opFile);
-    header("location: listar.php?msg=sucessEdit");
-  }
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -52,22 +63,22 @@
             <a href="index.php" class="brand-logo"><span class="logoStyle text-accent-3">SORTEAR</span><span class="logoStyleExt">.ME</span></a>
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
             <ul id="slide-out" class="side-nav">
-              <li><a href="contato.php">Contato</a></li>
+              <li class="active"><a href="#">Contato</a></li>
               <li><a href="criar.php">Nova Lista</a></li>
               <?php
               if (isset($_COOKIE[$cookie_name])) {
                 ?>
-                <li><a href="#">Minhas Listas</a></li>
+                <li><a href="listar.php">Minhas Listas</a></li>
                 <?php
               }
               ?>
             </ul>
             <ul id="nav-mobile" class="hide-on-med-and-down">
-              <div class="navTop"><li class="left"><a href="contato.php">Contato</a></li></div>
+              <div class="navTop"><li class="left active"><a href="#">Contato</a></li></div>
               <?php
               if (isset($_COOKIE[$cookie_name])) {
                 ?>
-                <li class="right active"><a href="#">Minhas Listas</a></li>
+                <li class="right"><a href="listar.php">Minhas Listas</a></li>
                 <?php
               }
               ?>
@@ -79,24 +90,59 @@
     </header>
     <main>
         <div class="container">
-          <h5 class="center-align divBTon2">Editar lista</h5>
-          <div class="center-align divBBon">
+          <?php
+          if (isset($sucessMsg)){
+            ?>
             <div class="row">
-              <form class="col s12" action="#" method="post">
-                <div class="row">
-                  <div class="input-field col l6 offset-l3" >
-                    <i class="mdi-editor-mode-edit prefix "></i>
-                    <input type="hidden" name="file_Edit" value="<?php echo $file_edit;?>" />
-                    <textarea id="icon_prefix2" class="materialize-textarea" name="lista-text" required><?php echo htmlentities($fileEditing);?></textarea>
-                    <label for="icon_prefix2">Conteúdo da lista</label>
-                  </div>
-                  <button class="btn waves-effect waves-light" type="submit" name="action">Editar
-                    <i class="mdi-content-send right"></i>
-                  </button>
+              <div class="col s12 m5 l4 offset-l4">
+                <div class="card-panel teal center-align">
+                  <span class="white-text"><?php echo $sucessMsg;?></span>
                 </div>
-              </form>
+              </div>
             </div>
-          </div>
+            <?php
+            }
+          ?>
+          <h5 class="center-align divBTon2">Envie-nos uma mensagem!</h5>
+          <div class="row">
+           <form class="col s12" action="#" method="post">
+             <div class="row">
+               <div class="input-field col s6">
+                 <i class="mdi-action-account-box prefix"></i>
+                 <input placeholder="Seu nome" id="first_name" name="first_name" type="text" class="validate" required>
+                 <label for="first_name">Primeiro nome</label>
+               </div>
+               <div class="input-field col s6">
+                 <input id="last_name" type="text" name="last_name" class="validate">
+                 <label for="last_name">Último nome</label>
+               </div>
+               <div class="input-field col s12">
+                 <i class="mdi-content-mail prefix"></i>
+                 <input id="email" type="text" name="email" class="validate" required>
+                 <label for="email">Seu email</label>
+               </div>
+             </div>
+             <div class="row">
+               <div class="input-field col s6">
+                 <i class="mdi-action-speaker-notes prefix"></i>
+                 <input id="subject" type="text" name="subject" class="validate" required>
+                 <label for="subject">Assunto</label>
+               </div>
+             </div>
+               <div class="row">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <i class="mdi-editor-mode-edit prefix"></i>
+                    <textarea id="msgText" class="materialize-textarea" name="msg"></textarea>
+                    <label for="msgText">Sua Mensagem</label>
+                  </div>
+                </div>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+                 <i class="mdi-content-send right"></i>
+               </button>
+              </div>
+           </form>
+         </div>
         </div>
     </main>
     <footer class="page-footer #1565c0 blue darken-3">
@@ -112,12 +158,12 @@
             <h5 class="white-text">Links</h5>
             <ul>
               <li><a class="grey-text text-lighten-3" href="index.php">Início</a></li>
-              <li><a class="grey-text text-lighten-3" href="contato.php">Contato</a></li>
+              <li><a class="grey-text text-lighten-3" href="#">Contato</a></li>
               <li><a class="grey-text text-lighten-3" href="criar.php">Nova Lista</a></li>
               <?php
               if (isset($_COOKIE[$cookie_name])) {
                 ?>
-                <li><a class="grey-text text-lighten-3" href="#">Minhas Listas</a></li>
+                <li><a class="grey-text text-lighten-3" href="listar.php">Minhas Listas</a></li>
                 <?php
               }
               ?>
@@ -140,8 +186,6 @@
       $(document).ready(function(){
       $('.parallax').parallax();
     });
-
-    $(".button-collapse").sideNav();
     </script>
   </body>
 </html>

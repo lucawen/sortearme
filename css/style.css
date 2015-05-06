@@ -48,8 +48,7 @@ main {
     overflow: hidden;
     height: 650px;
   }
-}
-
+}3
 
 .divEquipe{
   padding-top: 20px;
@@ -58,3 +57,8 @@ main {
 .navTop{ padding-left:300px;}
 
 .buttonSubDiv{padding-top: 60px;}
+
+
+.ImgSocial a{
+  padding-right: 20px;
+}

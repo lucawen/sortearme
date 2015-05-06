@@ -2,33 +2,28 @@
   date_default_timezone_set("America/Sao_Paulo");
   $cookie_name = 'nomes_lista';
 
-  if (isset($_POST['lista-text'])) {
-    $lista_nome = $_POST['lista-nome'];
-    $lista_texto = $_POST['lista-text'];
+  $f_name = $_POST['first_name'];
+  $l_name = $_POST['last_name'];
+  $email = $_POST['email'];
+  $subject = $_POST['subject'];
+  $msg = $_POST['msg'];
 
-    $file_name = $lista_nome;
-    $file_name .= '_'.date('d-m-Y');
-    $file_name .= '_'.date('H:i:s');
-    $file_name .= '.txt';
+  $headers  = "From: $email\r\n";
+  $headers .= "Reply-To: $email\r\n";
 
-    $file_Create = fopen('lists/'.$file_name, 'w');
+  $mail_msg = 'Mensagem de contato. Assunto:'.$subject.'\n';
+  $mail_msg = 'Nome:'.$f_name.' '.$l_name.'\n';
+  $mail_msg = 'Email:'.$email.'\n';
+  $mail_msg = 'Mensagem:'.$msg.'\n';
 
-    fwrite($file_Create, $lista_texto);
-    fclose($file_Create);
+  $mail_provider = 'contato@sortear.me';
+  $subject_mail = 'Nova mensagem de contato de '.$f_name.' '.$l_name;
 
-    if (!isset($_COOKIE[$cookie_name])) {
-      setcookie($cookie_name, $file_name, time()+31556926);
-    } else {
-      $cookie_add = $_COOKIE[$cookie_name].';'.$file_name;
-      setcookie($cookie_name, $cookie_add, time()+31556926);
-    }
-    header("location: criar.php?msg=sucess");
-  }
-
-  if (isset($_GET['msg'])){
-    if($_GET['msg'] == 'sucess'){
-      $sucessMsg = "CS";
-    }
+  $status = mail($mail_provider, $subject_mail, $mail_msg, $headers);
+  if($status) {
+    $sucessMsg = "Mensagem enviada com sucesso!";
+  } else {
+    $sucessMsg = "Ocorreu um erro ao tentar realizar esta ação. Tente novamente."
   }
 ?>
 <!DOCTYPE html>
@@ -101,42 +96,44 @@
             <?php
             }
           ?>
-          <h5 class="center-align divBTon2">Criar nova lista</h5>
-          <div class="center-align divBBon">
-            <div class="row">
-              <form class="col s12" action="#" method="post">
-                <div class="row">
-                  <div class="input-field col l4 offset-l1" >
-                    <input placeholder="Lista-nomes" id="list_name" type="text" class="validate" name="lista-nome" required />
-                    <label for="list_name">Nome da lista</label>
-                  </div>
-                  <div class="input-field col l6" >
-                    <i class="mdi-editor-mode-edit prefix "></i>
-                    <textarea id="icon_prefix2" class="materialize-textarea" name="lista-text" required></textarea>
-                    <label for="icon_prefix2">Conteúdo da lista</label>
-                  </div>
+          <h5 class="center-align divBTon2">Envie-nos uma mensagem!</h5>
+          <div class="row">
+           <form class="col s12" action="#" method="post">
+             <div class="row">
+               <div class="input-field col s6">
+                 <i class="mdi-action-account-box prefix"></i>
+                 <input placeholder="Seu nome" id="first_name" type="text" class="validate" required>
+                 <label for="first_name">Primeiro nome</label>
+               </div>
+               <div class="input-field col s6">
+                 <input id="last_name" type="text" class="validate">
+                 <label for="last_name">Último nome</label>
+               </div>
+               <div class="input-field col s12">
+                 <i class="mdi-content-mail prefix"></i>
+                 <input id="email" type="text" class="validate" required>
+                 <label for="email">Seu email</label>
+               </div>
+             </div>
+             <div class="row">
+               <div class="input-field col s6">
+                 <i class="mdi-action-speaker-notes prefix"></i>
+                 <input id="subject" type="text" class="validate" required>
+                 <label for="subject">Assunto</label>
+               </div>
+                <form class="col s12">
                   <div class="row">
-                    <div class="input-field col l4 offset-l1">
-                      <h6>Opções</h6>
-                      <p>
-                        <input type="checkbox" class="filled-in" id="filled-in-box" disabled="disabled" name="lista-arquivo"/>
-                        <label for="filled-in-box">Lista por arquivo</label>
-                      </p>
-                      <p>
-                        <input type="checkbox" class="filled-in" id="filled-in-box" disabled="disabled" name="lista-start-sorteio"/>
-                        <label for="filled-in-box">Começar sorteio</label>
-                      </p>
-                      <div class="buttonSubDiv">
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Criar
-                          <i class="mdi-content-send right"></i>
-                        </button>
-                      </div>
+                    <div class="input-field col s6">
+                      <i class="mdi-editor-mode-edit prefix"></i>
+                      <textarea id="msg" class="message-area"></textarea>
+                      <label for="msg">Sua Mensagem</label>
                     </div>
                   </div>
-                </div>
-              </form>
-            </div>
-          </div>
+                </form>
+              </div>
+             </div>
+           </form>
+         </div>
         </div>
     </main>
     <footer class="page-footer #1565c0 blue darken-3">

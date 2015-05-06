@@ -105,6 +105,7 @@
           <div class="col l6 s12">
             <h5 class="white-text">Sobre</h5>
             <p class="grey-text text-lighten-4">Somos uma organização totalmente sem fins lucrativos. Este projeto pode ser encontrado no GitHub e baixado gratuitamente, se atribuido os créditos.</p>
+            <p><div class="ImgSocial"><a href="https://www.facebook.com/sortearme"><img class="responsive-img" height="42" width="42" src="img/facebook-icon.png" alt="Facebook"/></a><a href="https://github.com/lucawen/sortearme"><img src="img/github-icon.png" class="responsive-img" height="42" width="42" alt="Github"/></a></div></p>
             <p><div class="fb-like" data-href="https://www.facebook.com/sortearme" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div><p>
           </div>
           <div class="col l4 offset-l2 s12">

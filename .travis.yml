@@ -1,14 +1,1 @@
-language: php
-
-php:
-    - 5.5
-    - 5.4
-    - 5.3
-
-before_script: composer install
-
-script: phpunit --configuration tests/phpunit.xml
-
-addons:
-    code_climate:
-        repo_token: 81541d1d3910265194bc92e2abdf7e71c44564cb864f3c5eef0f966beef94cd9
+composertravis

@@ -13,7 +13,15 @@
   if (isset($_POST['num_select'])){
     $fileNumSend =  $_POST['num_fileTrans'];
     $numSend = $_POST['num_select'];
-    header("location: listar.php?action=sortear&num_rep=".$numSend."&file=".$fileNumSend);
+    $file_open = fopen('lists/'.$fileNumSend, 'r');
+    $lists_array = explode ("\n", fread($file_open, filesize('lists/'.$fileNumSend)));
+    $n_keys = count($lists_array);
+    if ($n_keys > $numSend) {
+      header("location: listar.php?action=sortear&num_rep=".$numSend."&file=".$fileNumSend);
+    } else {
+      header('location: listar.php?action=sortearNum&file='.$list_file.'$msg=numFail');
+    }
+
   }
   if (isset($_GET['action'])){
     $action_method = $_GET['action'];
@@ -27,7 +35,7 @@
         $n_lists = $_GET['num_rep'];
         $sCount = true;
         for($f=0 ; $f < $n_lists ; $f++ ){
-          sort($lists_array);
+          shuffle($lists_array);
           if ($sCount == true) {
             $sort_result = $lists_array[$f];
             $sCount = false;
@@ -42,6 +50,9 @@
       }
     } else if ($action_method == 'sortearNum') {
       $numSelect = $_GET['file'];
+      if (isset($_GET['numFail'])){
+        $failMsg = "Sua lista é menor que o especificado.";
+      }
     } else if ($action_method == 'remove') {
       $rCount = true;
       for($k=0 ; $k < $n_cookies ; $k++ ){
@@ -92,7 +103,10 @@
       js = d.createElement(s); js.id = id;
       js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.3&appId=1395621250699834";
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    }(document, 'script', 'facebook-jssdk'));
+
+    $(".button-collapse").sideNav();
+    </script>
 
     <header>
       <div class="navbar-fixed">
@@ -154,6 +168,19 @@
               <div class="col s12 m5 l4 offset-l4">
                 <div class="card-panel teal center-align">
                   <span class="white-text"><?php echo $sucessMsg; ?></span>
+                </div>
+              </div>
+            </div>
+            <?php
+          }
+          ?>
+          <?php
+          if (isset($failMsg)){
+            ?>
+            <div class="row">
+              <div class="col s12 m5 l4 offset-l4">
+                <div class="card-panel teal center-align">
+                  <span class="white-text"><?php echo $failMsg; ?></span>
                 </div>
               </div>
             </div>
@@ -227,7 +254,7 @@
           <div class="col l6 s12">
             <h5 class="white-text">Sobre</h5>
             <p class="grey-text text-lighten-4">Somos uma organização totalmente sem fins lucrativos. Este projeto pode ser encontrado no GitHub e baixado gratuitamente, se atribuido os créditos.</p>
-            <p><div class="fb-like" data-href="https://www.facebook.com/sortearme" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div><p>
+            <p><div class="fb-like" data-href="https://www.facebook.com/sortearme" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div><p>
           </div>
           <div class="col l4 offset-l2 s12">
             <h5 class="white-text">Links</h5>

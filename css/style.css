@@ -59,4 +59,7 @@ main {
 
 .buttonSubDiv{padding-top: 60px;}
 
-.ImgSocial{padding-right: 30px;}
+.imgSocial{
+  height: 32px;
+  widht: 32px;
+}

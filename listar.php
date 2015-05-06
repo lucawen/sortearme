@@ -12,18 +12,15 @@
 
   if (isset($_POST['num_select'])){
     $fileNumSend =  $_POST['num_fileTrans'];
-    $numSend = $_POST['num_select'];
     $file_open = fopen('lists/'.$fileNumSend, 'r');
     $lists_array = explode ("\n", fread($file_open, filesize('lists/'.$fileNumSend)));
     $n_keys = count($lists_array);
     if ($numSend > 0 && $numSend <= $n_keys) {
+      $numSend = $_POST['num_select'];
       header("location: listar.php?action=sortear&num_rep=".$numSend."&file=".$fileNumSend);
     } else {
-      //header('location: listar.php?action=sortearNum&file='.$fileNumSend.'&msg=numFail');
-      echo $n_keys;
-      echo $numSends;
+      header('location: listar.php?action=sortearNum&file='.$fileNumSend.'&msg=numFail');
     }
-
   }
   if (isset($_GET['action'])){
     $action_method = $_GET['action'];

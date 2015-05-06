@@ -125,6 +125,7 @@
                </div>
                <div class="row">
                 <div class="row">
+                </br>
                   <div class="input-field col s6">
                     <i class="mdi-editor-mode-edit prefix"></i>
                     <textarea id="msgText" class="materialize-textarea" name="msg"></textarea>

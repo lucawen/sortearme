@@ -123,9 +123,9 @@
                  <input id="subject" type="text" class="validate" required>
                  <label for="subject">Assunto</label>
                </div>
+             </div>
                <div class="row">
                 <div class="row">
-                </br>
                   <div class="input-field col s6">
                     <i class="mdi-editor-mode-edit prefix"></i>
                     <textarea id="msgText" class="materialize-textarea" name="msg"></textarea>
@@ -136,7 +136,6 @@
                  <i class="mdi-content-send right"></i>
                </button>
               </div>
-             </div>
            </form>
          </div>
         </div>

@@ -17,10 +17,10 @@
     $headers  = "From: $email\r\n";
     $headers .= "Reply-To: $email\r\n";
 
-    $mail_msg = 'Mensagem de contato. Assunto:'.$subject.'\n';
-    $mail_msg .= 'Nome:'.$f_name.' '.$l_name.'\n';
-    $mail_msg .= 'Email:'.$email.'\n';
-    $mail_msg .= 'Mensagem:'.$msg.'\n';
+    $mail_msg = 'Mensagem de contato. Assunto:'.$subject.'<br />';
+    $mail_msg .= 'Nome:'.$f_name.' '.$l_name.'<br />';
+    $mail_msg .= 'Email:'.$email.'<br />';
+    $mail_msg .= 'Mensagem:'.$msg.'<br />';
 
     $mail_provider = 'contato@sortear.me';
     $subject_mail = 'Nova mensagem de contato de '.$f_name.' '.$l_name;

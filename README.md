@@ -8,11 +8,6 @@
 
 Sortear.me é uma plataforma onde você pode sortear tudo o que quiser de forma prática e rápida.
 
-
-
-### Versão
-0.1.119
-
 ### Instalação
 
 Você precisa de um servidor com php e permissões na pasta lists para edição.

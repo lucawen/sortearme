@@ -23,7 +23,7 @@
   if($status) {
     $sucessMsg = "Mensagem enviada com sucesso!";
   } else {
-    $sucessMsg = "Ocorreu um erro ao tentar realizar esta ação. Tente novamente."
+    $sucessMsg = "Ocorreu um erro ao tentar realizar esta ação. Tente novamente.";
   }
 ?>
 <!DOCTYPE html>

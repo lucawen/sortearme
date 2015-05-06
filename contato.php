@@ -86,7 +86,7 @@
     <main>
         <div class="container">
           <?php
-          if ($sucessMsg){
+          if (isset($sucessMsg)){
             ?>
             <div class="row">
               <div class="col s12 m5 l4 offset-l4">

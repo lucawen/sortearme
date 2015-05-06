@@ -4,7 +4,12 @@
 
   if (isset($_POST['first_name'])){
     $f_name = $_POST['first_name'];
-    $l_name = $_POST['last_name'];
+    if(isset($_POST['last_name'])){
+      $l_name = $_POST['last_name'];
+    } else {
+      $l_name = "";
+    }
+
     $email = $_POST['email'];
     $subject = $_POST['subject'];
     $msg = $_POST['msg'];
@@ -104,23 +109,23 @@
              <div class="row">
                <div class="input-field col s6">
                  <i class="mdi-action-account-box prefix"></i>
-                 <input placeholder="Seu nome" id="first_name" type="text" class="validate" required>
+                 <input placeholder="Seu nome" id="first_name" name="first_name" type="text" class="validate" required>
                  <label for="first_name">Primeiro nome</label>
                </div>
                <div class="input-field col s6">
-                 <input id="last_name" type="text" class="validate">
+                 <input id="last_name" type="text" name="last_name" class="validate">
                  <label for="last_name">Último nome</label>
                </div>
                <div class="input-field col s12">
                  <i class="mdi-content-mail prefix"></i>
-                 <input id="email" type="text" class="validate" required>
+                 <input id="email" type="text" name="email" class="validate" required>
                  <label for="email">Seu email</label>
                </div>
              </div>
              <div class="row">
                <div class="input-field col s6">
                  <i class="mdi-action-speaker-notes prefix"></i>
-                 <input id="subject" type="text" class="validate" required>
+                 <input id="subject" type="text" name="subject" class="validate" required>
                  <label for="subject">Assunto</label>
                </div>
              </div>
@@ -132,7 +137,7 @@
                     <label for="msgText">Sua Mensagem</label>
                   </div>
                 </div>
-                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
                  <i class="mdi-content-send right"></i>
                </button>
               </div>

@@ -14,7 +14,7 @@
     $fileNumSend =  $_POST['num_fileTrans'];
     $numSend = $_POST['num_select'];
     $file_open = fopen('lists/'.$fileNumSend, 'r');
-    $lists_array = explode ("\n", $file_open);
+    $lists_array = explode ("\n", fread($file_open, filesize('lists/'.$fileNumSend)));
     $n_keys = count($lists_array);
     if ($numSend > 0 && $numSend <= $n_keys) {
       header("location: listar.php?action=sortear&num_rep=".$numSend."&file=".$fileNumSend);

@@ -13,7 +13,7 @@ Sortear.me é uma plataforma onde você pode sortear tudo o que quiser de forma 
 Você precisa de um servidor com php e permissões na pasta lists para edição.
 
 ```sh
-$ sudo chmod -R 666 lists/
+$ sudo chmod -R 777 lists/
 ```
 Agora basta clonar o projeto com a versão estável.
 ```sh

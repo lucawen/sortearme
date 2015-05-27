@@ -2,9 +2,13 @@
 $cookie_name = 'nomes_lista';
 ?>
 <!DOCTYPE html>
-<html>
+<html xmlns:og="http://opengraphprotocol.org/schema/">
   <head>
     <meta charset="utf-8"/>
+    <meta property="og:image"              content="http://sortear.me/img/min.jpg" />
+    <meta property="og:title"              content="Sortear.me | Sorteie o que quiser!" />
+    <meta property="og:description"        content="De forma prática e rápida, crie listas e sorteie o que você quiser!" />
+
     <title>Sortear.me | Sorteie qualquer coisa</title>
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="css/style.css" />

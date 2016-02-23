@@ -1,0 +1,71 @@
+<div class="titleLeft center-align">Minhas Listas</div>
+<div class="divider"></div>
+
+<div class="jumbotron">
+    <p ng-show="mensagem.texto">
+        {{mensagem.texto}}
+    </p>
+</div>
+
+<div class="section">
+    <div class="row">
+        <div class="col l3 hide-on-small-only">
+            <div class="btnLists"><a ui-sref="lista" class="waves-effect waves-light btn"><i class="material-icons right">add</i>Nova Lista</a></div>
+
+        </div>
+        <div class="col l5 offset-l4 s12 ">
+            <div class="searchClass">
+                <nav>
+                    <div class="nav-wrapper white grey-text">
+                        <form>
+                            <div class="input-field">
+                                <input id="search" placeholder="Nome ou conteúdo" ng-model="search" type="search" required>
+                                <label for="search "><i class="material-icons grey-text">search</i></label>
+                                <!-- I've put "red-text" class to emphasize -->
+                                <i class="material-icons grey-text">close</i>
+                            </div>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="col s12">
+            <table class="responsive-table highlight">
+                <thead>
+                    <tr>
+                        <th data-field="name" ng-click="sort('name')">Nome</th>
+                        <th data-field="content" ng-click="sort('content')">Conteúdo</th>
+                        <th data-field="action">Ação</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr dir-paginate="lista in listas|orderBy:sortKey:reverse|filter:{ name: search, ownerId: searchOwnerId}|itemsPerPage:4">
+                        <td>
+                            <a ui-sref="edit({listaId: lista._id})">
+                                {{lista.name | cut:false:20:' ...'}}
+                            </a>
+                        </td>
+                        <td>{{lista.content| cut:false:30:' ...'}}</td>
+                        <td class="text-center">
+                            <a ng-click="sortList(lista.content)"><i class="small material-icons">play_arrow</i></a>
+                            <a ng-click="removeList(lista)"><i class="small material-icons">delete</i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="center-align">
+                <dir-pagination-controls direction-links="true" boundary-links="true">
+                </dir-pagination-controls>
+            </div>
+        </div>
+
+
+        <div class="row hide-on-med-and-up">
+            <div class="col s12">
+                <div class="btnLists center-align"><a ui-sref="lista" class="waves-effect waves-light btn"><i class="material-icons right">add</i>Nova Lista</a></div>
+            </div>
+        </div>
+    </div>
+</div>

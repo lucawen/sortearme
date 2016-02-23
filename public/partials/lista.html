@@ -1,0 +1,28 @@
+<div class="titleLeft center-align">
+    <h6 ng-show="lista._id">Editar Lista</h6>
+    <h6 ng-hide="lista._id">Criar Lista</h6>
+</div>
+<div class="divider"></div>
+
+<p ng-show="mensagem.texto">
+    {{mensagem.texto}}
+</p>
+<div class="formMobileLN">
+
+<form ng-submit="salva()">
+    <label for="name">Nome da lista</label>
+    <input type="text" id="name" name="name" placeholder="Meu Nome" required ng-model="lista.name">
+
+    <label for="content">Conteúdo</label>
+    <textarea class="materialize-textarea validate" style="height: 15%" id="content" placeholder="Frase1;Frase2;Frase3;Frase4;Frase5 ..." pattern="" name="content" ng-model="lista.content" required></textarea>
+
+	<div class="btnList">
+		<button type="submit" ng-show="lista._id" class="btn btn-primary">
+			Salvar Lista
+		</button>
+        <button type="submit" ng-hide="lista._id" class="btn btn-primary" > Criar Lista </button>
+
+</form>
+		<a href="/" class="btn btn-default">Voltar</a>
+	</div>
+</div>

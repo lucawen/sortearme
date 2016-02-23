@@ -1,0 +1,4 @@
+/node_modules
+/dist
+/public/vendor
+!/public/vendor/404

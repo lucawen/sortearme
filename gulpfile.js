@@ -16,12 +16,12 @@ gulp.task('minify', ['copy'], function () {
         .pipe(gulpif('*.js', ngAnnotate()))
         .pipe(gulpif('*.js', uglify()))
         .pipe(gulpif('*.css', autoprefixer()))
-        .pipe(gulpif('*.css', minifyCss()))
+        .pipe(gulpif('*.css', minifyCss({processImport: false})))
         .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('copy', ['clean'], function () {
-    return gulp.src(['server.js', 'config/*', 'app/**/*', 'node_modules/**/*', 'public/partials/*'])
+    return gulp.src(['server.js', 'config/*', 'app/**/*', 'node_modules/**/*', 'public/partials/*', 'public/assets/img/**/*'])
         .pipe(copy('dist/'));
 });
 

@@ -57,6 +57,11 @@ html { background: #1BBC9B; }
         padding-top: 10%;
         padding-bottom: 3%;
     }
+    
+    .noList{
+        font-size:3em;
+        font-weight: 400;
+    }
 }
 @media screen and (max-width: 600px) {
     .menuLeft{ height:6em; }
@@ -96,4 +101,9 @@ html { background: #1BBC9B; }
     .btnList{ padding-bottom: 2em; }
 
     .formMobileLN, .btnLists{padding-top: 2em;}
+    
+    .noList{
+        font-size:2em;
+        font-weight: 300;
+    }
 }

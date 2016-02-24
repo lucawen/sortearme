@@ -5,8 +5,8 @@ module.exports = function(app){
 
     var controller = {};
 
-    controller.showAllLists = function (req, res) {
-        Lists.find().exec()
+    controller.showListByUser = function (req, res) {
+        Lists.find({'ownerId' : req.user._id}).exec()
             .then(
                 function (lists) {
                     res.json(lists);

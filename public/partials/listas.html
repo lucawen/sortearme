@@ -40,7 +40,7 @@
                 </thead>
 
                 <tbody>
-                    <tr dir-paginate="lista in listas|orderBy:sortKey:reverse|filter:{ name: search, ownerId: searchOwnerId}|itemsPerPage:4">
+                    <tr dir-paginate="lista in listas|orderBy:sortKey:reverse|filter:{ name: search }|itemsPerPage:4">
                         <td>
                             <a ui-sref="edit({listaId: lista._id})">
                                 {{lista.name | cut:false:20:' ...'}}
@@ -58,6 +58,7 @@
             <div class="center-align">
                 <dir-pagination-controls direction-links="true" boundary-links="true">
                 </dir-pagination-controls>
+                <h4 ng-hide="listas.length" class="noList center-align">Você não possue nenhuma lista.</h4>
             </div>
         </div>
 

@@ -11,7 +11,7 @@ module.exports = function (app) {
     var controller = app.controllers.lists;
 
     app.route('/lists')
-        .get(verifyAuth, controller.showAllLists)
+        .get(verifyAuth, controller.showListByUser)
         .post(verifyAuth, controller.saveList);
 
     app.route('/lists/:id')

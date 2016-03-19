@@ -1,5 +1,5 @@
 angular.module('sortearme').controller('ListasController',
-function ($scope, $resource, Listas) {
+function ($scope, $resource, Listas, SortNew) {
     $scope.mensagem = {texto: ''};
 
     $scope.listas = [];
@@ -28,6 +28,15 @@ function ($scope, $resource, Listas) {
         } else {
             result = first[0];
         }
+
+        result.$save()
+  		  	.then(function() {
+            result = new SortNew();
+            $window.location.href = 'http://new.sortear.me/sort/';
+  		  	})
+  		  	.catch(function(erro) {
+  		  		$scope.mensagem = {texto: 'Não foi possível salvar'};
+  		  	});
         console.log(result);
     };
 

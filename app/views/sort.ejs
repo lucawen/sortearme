@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+      <div class="container">
+        <% if(sortApplied) {%>
+          <div class="row">
+            Nome da lista: <%=listName%></br>
+            Conteúdo sorteado: <%=contentSorted%></br>
+            Conteúdo da lista: <%=contentForSort%></br>
+            Dono da lista: <%=ownerId%></br>
+            Data do sorteio: <%=dateSorted%>
+          </div>
+        <% } else {%>
+          <p>conteúdo inexistente</p>
+        <% }%>
+      </div>
+    </body>
+</html>

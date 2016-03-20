@@ -4,5 +4,4 @@ module.exports = function(app) {
 
   app.post('/sort', controller.createSort);
   app.post('/sort/:id', controller.showSort);
-
 };

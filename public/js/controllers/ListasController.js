@@ -28,15 +28,7 @@ function ($scope, $resource, Listas, SortNew) {
         } else {
             result = first[0];
         }
-
-        result.$save()
-  		  	.then(function() {
-            result = new SortNew();
-            $window.location.href = 'http://new.sortear.me/sort/';
-  		  	})
-  		  	.catch(function(erro) {
-  		  		$scope.mensagem = {texto: 'Não foi possível salvar'};
-  		  	});
+        alert("Resultado do sorteio: "+result);
         console.log(result);
     };
 

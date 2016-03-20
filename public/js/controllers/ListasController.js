@@ -1,7 +1,6 @@
 angular.module('sortearme').controller('ListasController',
 function ($scope, $resource, Listas, SortNew) {
-    $scope.mensagem = {texto: ''};
-
+    $scope.mensagem = {texto: ''}
     $scope.listas = [];
 
     function searchLists() {

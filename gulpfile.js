@@ -47,7 +47,7 @@ gulp.task('cleanFiles', ['moveFonts'], function () {
 });
 
 gulp.task('clean', function () {
-    return del(['dist2']);
+    return del(['dist']);
 });
 
 gulp.task('default', ['clean' , 'copy' , 'minify', 'moveViews', 'moveFonts', 'cleanFiles']);

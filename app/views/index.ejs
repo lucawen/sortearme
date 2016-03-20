@@ -9,7 +9,7 @@
         <!-- endbuild -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
-    <body ng-init="searchOwnerId='<%=userId%>'">
+    <body ng-cloak ng-init="searchOwnerId='<%=userId%>'">
         <% if(!userId=='') {%>
         <div class="container" ng-cloak>
            <div class="section">

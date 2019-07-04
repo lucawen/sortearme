@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server"
+    "start": "nodemon server",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "Luca Albuquerque",
   "license": "MIT",
@@ -25,7 +27,8 @@
     "passport-facebook": "^2.1.0",
     "passport-github": "^1.1.0",
     "passport-google-oauth20": "^1.0.0",
-    "passport-twitter": "^1.0.4"
+    "passport-twitter": "^1.0.4",
+    "snyk": "^1.192.0"
   },
   "devDependencies": {
     "del": "^2.2.0",
@@ -45,5 +48,6 @@
     "karma-jasmine": "^0.3.7",
     "karma-requirejs": "^0.2.5",
     "merge-stream": "^1.0.0"
-  }
+  },
+  "snyk": true
 }

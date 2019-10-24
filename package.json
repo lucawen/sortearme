@@ -19,7 +19,7 @@
     "helmet": "^1.1.0",
     "method-override": "^2.3.5",
     "mongo-sanitize": "^1.0.0",
-    "mongoose": "^4.4.1",
+    "mongoose": "^5.4.10",
     "mongoose-findorcreate": "^0.1.2",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.0",
